@@ -4,7 +4,7 @@
 
   <head> 
 
-    <title>Ruby on Rails Tutorial Sample App | <%= yield(:title) %></title>
+    <title><%= full_title(yield(:title)) %></title>
 
     <%= stylesheet_link_tag    "application", :media => "all" %> 
 
@@ -12,11 +12,19 @@
 
     <%= csrf_meta_tags %> 
 
+    <%= render 'layouts/shim' %>
+
   </head> 
 
   <body> 
 
-    <%= yield %> 
+    <%= render 'layouts/header' %>
+      
+        <div class="container">
+        <%= yield %>
+        <%= render 'layouts/footer' %>
+     </div>
+ 
 
   </body> 
 
