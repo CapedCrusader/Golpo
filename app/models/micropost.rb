@@ -1,7 +1,8 @@
 class Micropost < ActiveRecord::Base
-  attr_accessible :content
+  attr_accessible :content, :photo
   belongs_to :user
 
+  has_attached_file :photo
   validates :content, presence: true, length: { maximum: 140 }
   validates :user_id, presence: true
   
