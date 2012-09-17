@@ -1,9 +1,11 @@
 class Micropost < ActiveRecord::Base
-  attr_accessible :content, :photo
+  attr_accessible :content, :body, :photo
   belongs_to :user
-
+  has_and_belongs_to_many :categories
+  accepts_nested_attributes_for :categories
   has_attached_file :photo
-  validates :content, presence: true, length: { maximum: 140 }
+  validates :content, presence: true, length: { maximum: 50 }
+  validates :body, presence: true 
   validates :user_id, presence: true
   
   default_scope order: 'microposts.created_at DESC'
