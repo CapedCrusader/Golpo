@@ -1,0 +1,9 @@
+<div id="posts"></div>
+
+<script type="text/javascript">
+  $(function() {
+  // SampleApp is the app name
+  window.router = new SampleApp.Routers.PostsRouter({posts: <%= @posts.to_json.html_safe -%>});
+  Backbone.history.start({pushState: true, root: "/users"});
+  });
+</script>

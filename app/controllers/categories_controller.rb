@@ -21,7 +21,7 @@ class CategoriesController < ApplicationController
 
   def show
     @categories  = Category.find(params[:id])
-    @microposts  = @categories.microposts.paginate(page: params[:page])
+    @posts  = @categories.posts.paginate(page: params[:page])
   end
 
 end
