@@ -17,7 +17,7 @@
   </head>
 
 
-  <body style="background: #FFFFFF;"> 
+  <body style="background: #EEEEEE;"> 
 
     <%= render 'layouts/header' %>
       

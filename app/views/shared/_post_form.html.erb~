@@ -4,7 +4,12 @@
   <p>
     <%= f.text_field :title, placeholder: "Title" %>
     <%= f.text_area :content, id: 'areaplace', class: 'wysihtml5', placeholder: "Your thoughts ..." %>
-  </p>     
+   
+  </p>  
+    
+ 
+   
+    
     <%= f.file_field :photo %>
   </div>
   <%= f.submit "Post", class: "actions btn btn-large btn-primary" %>
