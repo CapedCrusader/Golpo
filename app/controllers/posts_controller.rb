@@ -2,46 +2,77 @@ class PostsController < ApplicationController
   before_filter :signed_in_user, only: [:create, :edit, :update, :delete]
   before_filter :correct_user,  only: [:edit, :update, :destroy]
 
-  respond_to :html, :json
   def index
-    respond_with(@posts = Post.all)
-  end
-  
-  def new
-    @posts = Post.new
-    @posts.categories.build
-  end 
+    @posts = Post.all
 
-  def create
-    @post = current_user.posts.build(params[:post])
-    if @post.save
-      flash[:success] = "Post created!"
-      redirect_to root_path
-    else
-      render 'new'
-    end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @posts }
+    end    
   end
 
   def show
-    @post = Post.find(params[:id]) 
-  end
+    @post = Post.find(params[:id])
 
-  def edit
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @post }
+    end
   end
   
+  def new
+    @post = Post.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @post }
+    end
+  end 
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def create
+    @post = current_user.posts.build(params[:post])
+
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to show_post_path, notice: 'Post was successfully created.'}
+        format.json { render json: @post, status: :created, location: @post }
+	return
+      else
+        format.html { render action: "new" }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  
   def update
-    if @post.update_attributes(params[:post])
-      flash[:success] = "Post updated"
-      redirect_to root_path
-    else
-      render 'edit'
+    @post = Post.find(params[:id])
+
+    respond_to do |format|
+      if @post.update_attributes(params[:post])
+        format.html { redirect_to root_path, notice: 'Post was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def destroy
+    @post = Post.find(params[:id])
     @post.destroy
-    redirect_to root_path
+
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.json { head :no_content }
+    end
   end
+  
 
 
   private
