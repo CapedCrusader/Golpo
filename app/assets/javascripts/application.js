@@ -18,5 +18,6 @@
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require backbone/sample_app
+//= require wysihtml5-0.3.0
 //= require bootstrap-wysihtml5
 //= require_tree .

@@ -1,21 +1,19 @@
 <% if signed_in? %>
   <div class="row">
     <div class="span8">
-      <h3>Knowlegdge Feed</h3>
+      <h3>Feed</h3>
       <%= render 'shared/feed' %>
      </div>
   </div> 
 <% else %>
-  <div class="center hero-unit">
-     <h1>Welcome to the Sample App</h1>
+  <div class="center design" >
+     <h1>Slashroot</h1>
 
      <h2>
-        This is the home page for the
-        <a href="http://railstutorial.org/">Slashroot Innovation</a>
-        sample application.
+        Your gateway to awesome content!
      </h2>
 
-     <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+     <%= link_to "Sign up for beta!", signup_path, class: "btn btn-large btn-primary" %>
   </div>
 
   <%= link_to image_tag("slashroot.png", alt: "Rails"), 'http://rubyonrails.org/' %>

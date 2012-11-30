@@ -1,7 +1,7 @@
 @import "bootstrap";
 
 /* mixins, variables, etc. */
-$grayMediumLight: #eaeaea;
+$grayMediumLight: #7fff00;
 @mixin box_sizing {
    -moz-box-sizing: border-box;
    -webkit-box-sizing: border-box;
@@ -12,9 +12,12 @@ $grayMediumLight: #eaeaea;
 /* universal */
 html {
 overflow-y: scroll;
+
 }
 body {
 padding-top: 60px;
+background:url(images/background.jpg) no-repeat;
+font-family:"Times New Roman", Times, serif;
 }
 section {
 overflow: auto;
@@ -22,11 +25,36 @@ overflow: auto;
 textarea {
 resize: vertical;
 }
+.backgroundimage {
+  background-image:url(background.jpg);
+  height:800px;
+  width:1280px;
+  position:relative;
+}
+
+.navbar-inner {
+  background-color: #F5F5F5; /* background color will be black for all browsers */
+  background-image: none;
+  background-repeat: no-repeat;
+  filter: none;
+}
+.design{
+padding: 60px;
+margin-bottom: 30px;
+font-size: 18px;
+font-weight: 200;
+line-height: 30px;
+color: inherit;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+}
 .center {
 text-align: center;
 }
 .center h1 {
 margin-bottom: 10px;
+  color: #ADFF2F;
 }
 
 /* typography */
@@ -38,6 +66,7 @@ font-size: 3em;
 letter-spacing: -2px;
 margin-bottom: 30px;
 text-align: center;
+
 }
 h2 {
 font-size: 1.7em;
@@ -45,7 +74,7 @@ letter-spacing: -1px;
 margin-bottom: 30px;
 text-align: center;
 font-weight: normal;
-color: #999;
+color: #fff;
 }
 p {
 font-size: 1.1em;
@@ -77,7 +106,7 @@ border-top: 1px solid #eaeaea;
 color: #999;
 }
 footer a {
-color: #555;
+color: #999;
 }
 footer a:hover {
 color: #222;
