@@ -1,8 +1,10 @@
 class Post < ActiveRecord::Base
-  attr_accessible :title, :content, :photo
+  attr_accessible :title, :content, :photo, :posts_attributes
   belongs_to :user
   has_and_belongs_to_many :categories
+  has_many :likes
   accepts_nested_attributes_for :categories
+  accepts_nested_attributes_for :likes
   has_attached_file :photo
   validates :title, presence: true, length: { maximum: 50 }
   validates :content, presence: true 

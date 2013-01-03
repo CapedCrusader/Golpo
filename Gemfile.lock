@@ -32,6 +32,8 @@ GEM
       rake
     arel (3.0.2)
     bcrypt-ruby (3.0.1-x86-mingw32)
+    bootstrap-addons-rails (0.1.1)
+      rails
     bootstrap-sass (2.2.1.1)
       sass (~> 3.2)
     bootstrap-will_paginate (0.0.9)
@@ -210,6 +212,7 @@ PLATFORMS
 DEPENDENCIES
   annotate
   bcrypt-ruby
+  bootstrap-addons-rails
   bootstrap-sass
   bootstrap-will_paginate
   bootstrap-wysihtml5-rails

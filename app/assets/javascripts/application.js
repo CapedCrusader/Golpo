@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require bootstrap/load-image.min
+//= require bootstrap/image-gallery.min
 //= require underscore
 //= require backbone
 //= require backbone_rails_sync

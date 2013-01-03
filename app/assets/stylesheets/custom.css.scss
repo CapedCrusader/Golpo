@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "bootstrap/image-gallery";
 
 /* mixins, variables, etc. */
 $grayMediumLight: #7fff00;
@@ -16,8 +17,6 @@ overflow-y: scroll;
 }
 body {
 padding-top: 60px;
-background:url(images/background.jpg) no-repeat;
-font-family:"Times New Roman", Times, serif;
 }
 section {
 overflow: auto;
@@ -26,17 +25,24 @@ textarea {
 resize: vertical;
 }
 .backgroundimage {
-  background-image:url(background.jpg);
+  /*background-image:url(background.jpg);;
   height:800px;
-  width:1280px;
+  width:1280px;*/
+  background-color: #F8FEF4; 
   position:relative;
 }
 
 .navbar-inner {
-  background-color: #F5F5F5; /* background color will be black for all browsers */
+
+  background-color: #FF9934; /* background color will be black for all browsers */
   background-image: none;
   background-repeat: no-repeat;
   filter: none;
+}
+
+.hero-unit{
+  background-color: #FFC018;
+
 }
 .design{
 padding: 60px;
@@ -54,7 +60,7 @@ text-align: center;
 }
 .center h1 {
 margin-bottom: 10px;
-  color: #ADFF2F;
+  color: $white;
 }
 
 /* typography */
@@ -83,27 +89,28 @@ line-height: 1.7em;
 
 /* header */
 #logo {
-float: left;
-margin-right: 10px;
-font-size: 1.7em;
-color: #fff;
-text-transform: uppercase;
-letter-spacing: -1px;
-padding-top: 9px; 
-font-weight: bold;
-line-height: 1;
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #777;
+  background-color: transparent;
+  letter-spacing: -1px;
+  padding-top: 9px; 
+  font-weight: bold;
+  line-height: 1;
+  text-shadow: 0 1px 0 white;
 }
 #logo:hover {
-color: #fff;
-text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 /* footer */
-footer {
+footer .navbar-inner{
 margin-top: 45px;
 padding-top: 5px;
-border-top: 1px solid #eaeaea;
-color: #999;
+border-top: 1px solid #B3C631;
+background-color: #B3C631;
 }
 footer a {
 color: #999;
@@ -248,3 +255,9 @@ height: 100px;
 margin-bottom: 5px;
 }
 }  
+
+.item {
+  width: 280px;
+  margin: 10px;
+  float: left;
+}

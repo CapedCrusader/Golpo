@@ -14,10 +14,12 @@
 </p>
 
 <p>
-  <span><%= image_tag @post.photo.url %>
+  <span><%= image_tag @post.photo.url if @post.photo? %>
 </p>
 
-
+<p id="like">
+  <%= render 'likes/like_button', :post => @post %>
+</p>
 
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

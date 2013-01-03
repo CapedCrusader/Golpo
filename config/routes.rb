@@ -7,6 +7,7 @@ SampleApp::Application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :posts #, only: [:new, :create, :update, :destroy]
+  resources :likes, :only => [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :categories, only: [:create, :update, :destroy]
   root to: 'static_pages#home'

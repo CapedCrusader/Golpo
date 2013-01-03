@@ -9,7 +9,7 @@ gem 'bootstrap-will_paginate'
 gem 'paperclip'
 gem 'rails-backbone'
 gem 'bootstrap-wysihtml5-rails'
-
+gem 'bootstrap-addons-rails'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

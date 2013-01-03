@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
 
   has_many :reverse_relationships, foreign_key: "followed_id", class_name:  "Relationship", dependent:  :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
-
+  has_many :likes
 
 
   before_save { self.email.downcase! }
@@ -44,6 +44,10 @@ class User < ActiveRecord::Base
 
   def unfollow!(other_user)
     relationships.find_by_followed_id(other_user.id).destroy
+  end
+
+  def has_like? post
+    likes.find_by_post_id post.id
   end
 
 
