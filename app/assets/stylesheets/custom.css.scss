@@ -17,9 +17,14 @@ overflow-y: scroll;
 }
 body {
 padding-top: 60px;
+
 }
 section {
 overflow: auto;
+font-family:Georgia;
+font-size: 20px;
+font-style: italic;
+text-shadow:1px 1px 2px #f0f0f0;
 }
 textarea {
 resize: vertical;
@@ -75,12 +80,13 @@ text-align: center;
 
 }
 h2 {
+font : ComicSans;
 font-size: 1.7em;
 letter-spacing: -1px;
 margin-bottom: 30px;
 text-align: center;
 font-weight: normal;
-color: #fff;
+color: #000;
 }
 p {
 font-size: 1.1em;
@@ -256,8 +262,9 @@ margin-bottom: 5px;
 }
 }  
 
-.item {
-  width: 280px;
-  margin: 10px;
-  float: left;
+.section h2{
+    margin:50px 0px 30px 50px;
+    font-family:Georgia;
+    font-size: 34px;
+    font-style: italic;
 }

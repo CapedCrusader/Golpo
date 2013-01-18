@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails'
+gem 'rails', '3.2.11'
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
 gem 'faker'
@@ -10,6 +10,7 @@ gem 'paperclip'
 gem 'rails-backbone'
 gem 'bootstrap-wysihtml5-rails'
 gem 'bootstrap-addons-rails'
+gem 'masonry-rails'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

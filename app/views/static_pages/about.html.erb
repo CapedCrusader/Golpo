@@ -1,110 +1,165 @@
 <% provide(:title, 'Vinayak') %> 
 
-<h1>Vinayak</h1> 
+ 
+  <div class="section black" id="section1">
+    <h2>Ganesh Chavithi</h2>
+    <p>
+        <section class="row">
+          <div class="span6">
+              <a data-toggle="collapse" href="#collapseOne">
+                  వినాయక వ్రతము
+              </a>
 
-</p> 
-<div id="example" class="modal hide fade in" style="display: none; ">  
-<div class="modal-header">  
-<a class="close" data-dismiss="modal">×</a>  
-<h3>This is a Modal Heading</h3>  
-</div>  
-<div class="modal-body">  
-<h4>Text in a modal</h4>
-<p><%= image_tag href="background.jpg" %></p>  
-<p>You can add some text here.</p>                
-</div>  
-<div class="modal-footer">  
-<a href="#" class="btn btn-success">Call to action</a>  
-<a href="#" class="btn" data-dismiss="modal">Close</a>  
-</div>  
-</div>  
+              <div id="collapseOne" class=" collapse in">
+                <blockquote>
+                    సనాతన ధర్మాన్ని ఆచరించే వారందరికీ ఆదిదేవుడు విఘ్నేశ్వరుడు. ప్రతి సంవత్సరము భాద్రపద శుద్ధ చవితి రోజున ప్రత్యేకించి విఘ్నేశ్వరుడిని కొలుస్తారు. వినాయక చవితి రోజున అందరూ, వినాయక వ్రతాన్ని భక్తిశ్రద్ధలతో చేసి, వ్రతకథను విని, తమకు ఎలాంటి విఘ్నాలు వాటిల్లకుండా కాపాడమని ప్రార్థిస్తారు.
+                  
+                </blockquote>
+              </div>
+
+              <a data-toggle="collapse" href="#collapseTwo">
+                      Click here for English
+              </a>
+              <div id="collapseTwo" class=" collapse ">
+                <blockquote>
+                  <p>
+                        Ganesha's head symbolizes the Atma or the soul, which is the ultimate supreme reality of human existence, and his human body signifies Maya or the earthly existence of human beings. The elephant head denotes wisdom and its trunk represents Om, the sound symbol of cosmic reality. In his upper right hand Ganesha holds a goad, which helps him propel mankind forward on the eternal path and remove obstacles from the way. The noose in Ganesha's left hand is a gentle implement to capture all difficulties.
+                  </p>
+                  <p>  
+                        The broken tusk that Ganesha holds like a pen in his lower right hand is a symbol of sacrifice, which he broke for writing the Mahabharata. The rosary in his other hand suggests that the pursuit of knowledge should be continuous. The Modakam (sweet) he holds in his trunk indicates that one must discover the sweetness of the Atma. His fan-like ears convey that he is all ears to our petition. The snake that runs round his waist represents energy in all forms. And he is humble enough to ride the lowest of creatures, a mouse.
+                  </p>
+                </blockquote>
+              </div>
+          </div>
+          <div class="span6">
+            <div id="myCarousel" class="carousel slide">
+               <!-- Carousel items -->
+              <div class="carousel-inner">
+                <div class="active item"><%= image_tag src="ganesha_1.jpeg" %></div>
+                <div class="item"><%= image_tag src="ganesha_2.jpeg" %></div>
+                <div class="item"><%= image_tag src="ganesha_3.jpg" %></div>
+              </div>
+               <!-- Carousel nav -->
+              <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+              <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+            </div>
+          </div>
+          <%= audio_tag "awesome.mp3" %>
+        </section>
+    </p>
+  </div>
  
 
-<p> 
 
-  The <a data-toggle="modal" href="#example">Ruby on Rails Tutorial</a> 
+      
 
-  is a project to make a book and screencasts to teach web development 
+  <div class="section white" id="section2">
+    <h2>Puja Items</h2>
+        <div class="container-fluid">
+            <header>
+                
+                <p>
+                    <button id="start-slideshow" class="btn btn-large btn-success" data-slideshow="5000" data-target="#modal-gallery" data-selector="#gallery a[rel=gallery]">Start Slideshow</button>
+                    <button id="toggle-fullscreen" class="btn btn-large btn-primary" data-toggle="button">Toggle Fullscreen</button>
+                </p>
+            </header>
+            <div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
+              
+              <%= link_to image_tag("apamarga_1.jpg"), url_for("http://localhost:3000/assets/apamarga.jpg"), :title => "Apamarga", :rel => "gallery" %>
+              <%= link_to image_tag("arjuna_1.jpg"), url_for("http://localhost:3000/assets/arjuna.jpg"), :title => "Arjuna", :rel => "gallery" %>
+              <%= link_to image_tag("arka_1.jpg"), url_for("http://localhost:3000/assets/arka.jpg"), :title => "Arka", :rel => "gallery" %>
+              <%= link_to image_tag("aswatha_1.jpg"), url_for("http://localhost:3000/assets/aswatha.jpg"), :title => "Aswatha", :rel => "gallery" %>
+              <%= link_to image_tag("badari_1.jpg"), url_for("http://localhost:3000/assets/badari.jpg"), :title => "Badari", :rel => "gallery" %>
+              <%= link_to image_tag("beetel_1.jpg"), url_for("http://localhost:3000/assets/beetel.jpg"), :title => "Beetel", :rel => "gallery" %>
+              <%= link_to image_tag("bilva_1.jpg"), url_for("http://localhost:3000/assets/bilva.jpg"), :title => "Bilva", :rel => "gallery" %>
+              <%= link_to image_tag("brihathi_1.jpg"), url_for("http://localhost:3000/assets/brihathi.jpg"), :title => "Brihathi", :rel => "gallery" %>
+              <%= link_to image_tag("camphor_1.jpg"), url_for("http://localhost:3000/assets/camphor.jpg"), :title => "Camphor", :rel => "gallery" %>
+              <%= link_to image_tag("chootha_1.jpg"), url_for("http://localhost:3000/assets/chootha.jpg"), :title => "Chootha", :rel => "gallery" %>
+              <%= link_to image_tag("daadimi_1.jpg"), url_for("http://localhost:3000/assets/daadimi.jpg"), :title => "Daadimi", :rel => "gallery" %>
+              <%= link_to image_tag("dattura_1.jpg"), url_for("http://localhost:3000/assets/dattura.jpg"), :title => "Dattura", :rel => "gallery" %>
+              <%= link_to image_tag("devadaru_1.jpg"), url_for("http://localhost:3000/assets/devadaru.jpg"), :title => "Devadaru", :rel => "gallery" %>
+              <%= link_to image_tag("dhoop_1.jpg"), url_for("http://localhost:3000/assets/dhoop.jpg"), :title => "Dhoop", :rel => "gallery" %>
+              <%= link_to image_tag("flower_1.jpg"), url_for("http://localhost:3000/assets/flower.jpg"), :title => "Flower", :rel => "gallery" %>
+              <%= link_to image_tag("gandhaki_1.jpg"), url_for("http://localhost:3000/assets/gandhaki.jpg"), :title => "Gandhaki", :rel => "gallery" %>
+              <%= link_to image_tag("gandham_1.jpg"), url_for("http://localhost:3000/assets/gandham.jpg"), :title => "Gandham", :rel => "gallery" %>
+              <%= link_to image_tag("jahanav_1.jpg"), url_for("http://localhost:3000/assets/jahanav.jpg"), :title => "Jahanav", :rel => "gallery" %>
+              <%= link_to image_tag("jajee_1.jpg"), url_for("http://localhost:3000/assets/jajee.jpg"), :title => "Jajee", :rel => "gallery" %>
+              <%= link_to image_tag("karaveera_1.jpg"), url_for("http://localhost:3000/assets/karaveera.jpg"), :title => "Karaveera", :rel => "gallery" %>
+              <%= link_to image_tag("kumkum_1.jpg"), url_for("http://localhost:3000/assets/kumkum.jpg"), :title => "Kumkum", :rel => "gallery" %>
+              <%= link_to image_tag("machi_1.jpg"), url_for("http://localhost:3000/assets/machi.jpg"), :title => "Machi", :rel => "gallery" %>
+              <%= link_to image_tag("mango_1.jpg"), url_for("http://localhost:3000/assets/mango.jpg"), :title => "Mango", :rel => "gallery" %>
+              <%= link_to image_tag("maruvam_1.jpg"), url_for("http://localhost:3000/assets/maruvam.jpg"), :title => "Maruvam", :rel => "gallery" %>
+              <%= link_to image_tag("modhak_1.jpg"), url_for("http://localhost:3000/assets/modhak.jpg"), :title => "Modhak", :rel => "gallery" %>
+              <%= link_to image_tag("pathra_1.jpg"), url_for("http://localhost:3000/assets/pathra.jpg"), :title => "Pathra", :rel => "gallery" %>
+              <%= link_to image_tag("phalam_1.jpg"), url_for("http://localhost:3000/assets/phalam.jpg"), :title => "Phalam", :rel => "gallery" %>
+              <%= link_to image_tag("shami_1.jpg"), url_for("http://localhost:3000/assets/shami.jpg"), :title => "Shami", :rel => "gallery" %>
+              <%= link_to image_tag("sindhudhara_1.jpg"), url_for("http://localhost:3000/assets/sindhudhara.jpg"), :title => "Sindhudhara", :rel => "gallery" %>
+              <%= link_to image_tag("thulasi_1.jpg"), url_for("http://localhost:3000/assets/thulasi.jpg"), :title => "THulasi", :rel => "gallery" %>
+              <%= link_to image_tag("vishnukrantha_1.jpg"), url_for("http://localhost:3000/assets/vishnukrantha.jpg"), :title => "Vishnukrantha", :rel => "gallery" %>
 
-  with <a href="http://rubyonrails.org/">Ruby on Rails</a>. This 
+              </div>
+            <br>
+        </div>
+        <!-- modal-gallery is the modal dialog used for the image gallery -->
+        <div id="modal-gallery" class="modal modal-gallery hide fade" tabindex="-1" style="margin-top: -257.5px; margin-left: -287px; display: none;" aria-hidden="true">
+            <div class="modal-header">
+                <a class="close" data-dismiss="modal">×</a>
+                <h3 class="modal-title" style="width: 530px;">Ísafjörður</h3>
+            </div>
+            <div class="modal-body"><div class="modal-image" style="width: 530px; height: 353px;"><img src="http://farm9.static.flickr.com/8211/8293777447_cd748fbfc6_b.jpg" width="530" height="353" class="in"></div></div>
+            <div class="modal-footer">
+                <a class="btn modal-download" target="_blank" href="http://farm9.static.flickr.com/8211/8293777447_cd748fbfc6_b.jpg">
+                    <i class="icon-download"></i>
+                    <span>Download</span>
+                </a>
+                <a class="btn btn-success modal-play modal-slideshow" data-slideshow="5000" style="">
+                    <i class="icon-white icon-pause"></i>
+                    <span>Slideshow</span>
+                </a>
+                <a class="btn btn-info modal-prev" style="">
+                    <i class="icon-arrow-left icon-white"></i>
+                    <span>Previous</span>
+                </a>
+                <a class="btn btn-primary modal-next" style="">
+                    <span>Next</span>
+                    <i class="icon-arrow-right icon-white"></i>
+                </a>
+            </div>
+        </div>
+  </div> 
 
-  is the sample application for the tutorial. 
-
-</p>
-
-<div data-href="http://www.youtube.com/v/itTskyFLSS8&amp;rel=0&amp;autohide=1&amp;showinfo=0&amp;autoplay=1" class="modal hide fade" id="popup" style="display: none;">
-        <div class="container">http://www.youtube.com/v/itTskyFLSS8&amp;rel=0&amp;autohide=1&amp;showinfo=0&amp;autoplay=1</div>
-      </div>
-
-<div class="container-fluid">
-    <header>
-        
-        <p>
-            <button id="start-slideshow" class="btn btn-large btn-success" data-slideshow="5000" data-target="#modal-gallery" data-selector="#gallery a[rel=gallery]">Start Slideshow</button>
-            <button id="toggle-fullscreen" class="btn btn-large btn-primary" data-toggle="button">Toggle Fullscreen</button>
-        </p>
-    </header>
-    <div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
-      <a><%=  %><%= image_tag src="apamarga_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8501/8294036245_39360fd2fd_b.jpg" title="Arjuna"><%= image_tag src="arjuna_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8077/8292960617_08362972cc_b.jpg" title="Arka"><%= image_tag src="arka_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8356/8294540274_2855f04e64_b.jpg" title="Aswatha"><%= image_tag src="aswatha_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8073/8294120408_e85ccfa564_b.jpg" title="Badari"><%= image_tag src="badari_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8357/8294050810_3da87b4d74_b.jpg" title="Beetel"><%= image_tag src="beetel_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8072/8293980880_717d094a9d_b.jpg" title="Bilwa"><%= image_tag src="bilva_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8211/8293777447_cd748fbfc6_b.jpg" title="Brihathi"><%= image_tag src="brihathi_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8217/8293324419_50d7549df9_b.jpg" title="Camphor"><%= image_tag src="camphor_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8075/8293165275_f4b1503631_b.jpg" title="Chootha"><%= image_tag src="chootha_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8492/8294489208_8a07f2082c_b.jpg" title="TDaadimi"><%= image_tag src="daadimi_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8219/8293850022_cb0bb4bbbc_b.jpg" title="Dattura"><%= image_tag src="dattura_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8072/8294407902_3e735d3a21_b.jpg" title="Devadaru"><%= image_tag src="devadaru_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8074/8294024674_6f472e3225_b.jpg" title="Dhoop"><%= image_tag src="dhoop_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8082/8293956482_d57a5a91e5_b.jpg" title="Durva"><%= image_tag src="durva_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8362/8293946438_bc038cc0db_b.jpg" title="Flower"><%= image_tag src="flower_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8498/8293895818_b3fb6d8437_b.jpg" title="Gandhaki"><%= image_tag src="gandhaki_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8356/8293552539_d4ca95f103_b.jpg" title="Gandham"><%= image_tag src="gandham_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8495/8295174046_4be729cecf_b.jpg" title="Jahanav"><%= image_tag src="jahanav_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8077/8293433729_fda96f44f2_b.jpg" title="Jajee"><%= image_tag src="jajee_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8494/8294506702_3b08154ec1_b.jpg" title="Karaveera"><%= image_tag src="karaveera_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8084/8294407980_5237df8560_b.jpg" title="Kumkum"><%= image_tag src="kumkum_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8072/8293342757_ac8e51fc21_b.jpg" title="Machi"><%= image_tag src="machi_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8503/8293054545_b755ed9dfc_b.jpg" title="Mango"><%= image_tag src="mango_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8083/8294474436_cda16ef065_b.jpg" title="Maruvam"><%= image_tag src="maruvam_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8497/8292775267_5347f11646_b.jpg" title="Modhak"><%= image_tag src="modhak_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8351/8294372896_0bc10f67a7_b.jpg" title="Pathra"><%= image_tag src="pathra_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8224/8295063846_04664c0915_b.jpg" title="Phalam"><%= image_tag src="phalam_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8080/8294556888_ed452f62a3_b.jpg" title="Shami"><%= image_tag src="shami_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8220/8294094833_c918a10b47_b.jpg" title="Sindhudhara"><%= image_tag src="sindhudhara_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8356/8294056694_978c6cfb18_b.jpg" title="Thulasi"><%= image_tag src="thulasi_1.jpg" %></a>
-      <a rel="gallery" href="http://farm9.static.flickr.com/8351/8293403233_b16112cba6_b.jpg" title="Vishnukrantha"><%= image_tag src="vishnukrantha_1.jpg" %></a>
-      </div>
-    <br>
-</div>
-<!-- modal-gallery is the modal dialog used for the image gallery -->
-<div id="modal-gallery" class="modal modal-gallery hide fade" tabindex="-1" style="margin-top: -257.5px; margin-left: -287px; display: none;" aria-hidden="true">
-    <div class="modal-header">
-        <a class="close" data-dismiss="modal">×</a>
-        <h3 class="modal-title" style="width: 530px;">Ísafjörður</h3>
-    </div>
-    <div class="modal-body"><div class="modal-image" style="width: 530px; height: 353px;"><img src="http://farm9.static.flickr.com/8211/8293777447_cd748fbfc6_b.jpg" width="530" height="353" class="in"></div></div>
-    <div class="modal-footer">
-        <a class="btn modal-download" target="_blank" href="http://farm9.static.flickr.com/8211/8293777447_cd748fbfc6_b.jpg">
-            <i class="icon-download"></i>
-            <span>Download</span>
-        </a>
-        <a class="btn btn-success modal-play modal-slideshow" data-slideshow="5000" style="">
-            <i class="icon-white icon-pause"></i>
-            <span>Slideshow</span>
-        </a>
-        <a class="btn btn-info modal-prev" style="">
-            <i class="icon-arrow-left icon-white"></i>
-            <span>Previous</span>
-        </a>
-        <a class="btn btn-primary modal-next" style="">
-            <span>Next</span>
-            <i class="icon-arrow-right icon-white"></i>
-        </a>
-    </div>
-</div>
+  <div class="section black" id="section3">
+    <h2>Section 3</h2>
+    <p>
+        He scents thy footsteps in the snow
+        Wheresoever thou dost go,
+        Thro' the wintry hail and rain.
+        When wilt thou return again?
+ 
+    </p>
+  </div>
 
 
+<script type="text/javascript">
+$(function(){
+  $('.carousel').carousel();
+});
+</script>
+
+<script type="text/javascript">
+$(function() {
+    $('ul.nav a').bind('click',function(event){
+        var $anchor = $(this);
+        /*
+        if you want to use one of the easing effects:
+        $('html, body').stop().animate({
+            scrollLeft: $($anchor.attr('href')).offset().left
+        }, 1500,'easeInOutExpo');
+         */
+        $('html, body').stop().animate({
+            scrollLeft: $($anchor.attr('href')).offset().left
+        }, 1000);
+        event.preventDefault();
+    });
+});
+</script>
