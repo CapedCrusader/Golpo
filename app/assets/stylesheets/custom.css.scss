@@ -266,5 +266,21 @@ section h2{
     margin:50px 0px 30px 50px;
     font-family:Georgia;
     font-size: 34px;
-    font-style: italic;
+    font-style: italic
 }
+
+#masonry-container {
+  padding: 5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  clear: both;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+.col img { max-width: 80px; }

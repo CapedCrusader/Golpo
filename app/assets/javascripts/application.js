@@ -22,4 +22,7 @@
 //= require backbone/sample_app
 //= require wysihtml5-0.3.0
 //= require bootstrap-wysihtml5
+//= require masonry/jquery.masonry
+//= require masonry/jquery.imagesloaded.min
+//= require masonry/modernizr-transitions
 //= require_tree .
