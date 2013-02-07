@@ -1,4 +1,6 @@
 SampleApp::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+
   resources :users do
     member do
       get :following, :followers
@@ -6,7 +8,7 @@ SampleApp::Application.routes.draw do
   end
 
   resources :sessions, only: [:new, :create, :destroy]
-  resources :posts #, only: [:new, :create, :update, :destroy]
+  resources :posts , only: [:new, :create, :update, :show, :edit, :destroy]
   resources :likes, :only => [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :categories, only: [:create, :update, :destroy]

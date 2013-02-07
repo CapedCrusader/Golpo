@@ -8,7 +8,6 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'paperclip'
 gem 'rails-backbone'
-gem 'bootstrap-wysihtml5-rails'
 gem 'bootstrap-addons-rails'
 gem 'masonry-rails'
 # Bundle edge Rails instead:
@@ -30,6 +29,10 @@ end
 
 
 gem 'jquery-rails' 
+
+#adding ckeditor gem
+gem 'ckeditor'
+
 #To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

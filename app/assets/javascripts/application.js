@@ -15,14 +15,14 @@
 //= require bootstrap
 //= require bootstrap/load-image.min
 //= require bootstrap/image-gallery.min
+//= require ckeditor/init
 //= require underscore
 //= require backbone
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require backbone/sample_app
-//= require wysihtml5-0.3.0
-//= require bootstrap-wysihtml5
 //= require masonry/jquery.masonry
 //= require masonry/jquery.imagesloaded.min
+//= require masonry/jquery.infinitescroll.min
 //= require masonry/modernizr-transitions
 //= require_tree .
