@@ -47,7 +47,7 @@ gem 'ckeditor'
 
 # To use debugger
 # gem 'debugger'
-gem 'therubyracer', :platforms => :ruby
+
 
 
 group :test, :development do
