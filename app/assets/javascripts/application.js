@@ -23,6 +23,6 @@
 //= require backbone/sample_app
 //= require masonry/jquery.masonry
 //= require masonry/jquery.imagesloaded.min
-//= require masonry/jquery.infinitescroll.min
+//= require jquery.infinitescroll.min
 //= require masonry/modernizr-transitions
 //= require_tree .
