@@ -238,6 +238,5 @@ DEPENDENCIES
   sass-rails
   spork (= 0.9.0)
   sqlite3
-  therubyracer
   uglifier
   will_paginate

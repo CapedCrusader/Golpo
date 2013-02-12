@@ -1,26 +1,27 @@
-<%= provide(:title, 'Display Posts') %>
-<h1>Display Posts</h1>
-<div class="row">
-<div class="span6 offset3">
+<%if signed_in? %>
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
+	<div>
+		<%= render 'shared/show_item' %>
+    </div>
 
-<p>
-  <b>Content:</b>
-  <%= simple_format(@post.content) %>
-</p>
+<% else %>
+  
+    
+    
+      <div class="row-fluid">
+        <div class="span3" >
+           
+        </div>
+        <div class="span9 offset2">
+          <div class="hero-unit center">          
+            <h1>Product name placeholder</h1>
+            <h2>Video placeholder</h2>
+            <div>
+              <%= link_to "Sign up for beta!", signup_path, class: "btn btn-large btn-primary" %>
+            </div>
+          </div>
+        </div>     
+      </div>
 
-<p>
-  <span><%= image_tag @post.photo.url if @post.photo? %>
-</p>
-
-<p id="like">
-  <%= render 'likes/like_button', :post => @post %>
-</p>
-
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+  
+<% end %>
