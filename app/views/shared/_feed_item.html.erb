@@ -4,7 +4,7 @@
       <%= link_to feed_item.user.name, feed_item.user %>
     </span>
     <span class="content"><%= feed_item.title %></span>
-    <span class="content" id="wysiwyg"><%= simple_format(feed_item.content) %></span>
+    <span class="content"><%= simple_format(feed_item.content) %></span>
     <aside ><%= image_tag feed_item.photo.url if feed_item.photo? %></aside>
     <span class="timestamp">
       Posted <%= time_ago_in_words(feed_item.created_at) %> ago.

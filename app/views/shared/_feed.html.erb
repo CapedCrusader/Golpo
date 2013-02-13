@@ -2,6 +2,8 @@
 
   <div id='posts'>
     <%= render partial: 'shared/feed_item', collection: @feed_items %>
+   <div class="clearfix"></div> 
   </div>
+  
   	<%= will_paginate @feed_items %>
 <% end %>
