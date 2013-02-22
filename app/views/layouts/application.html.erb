@@ -12,6 +12,8 @@
 
     <%= csrf_meta_tags %> 
 
+    
+
     <%= render 'layouts/shim' %>
 
   </head>
@@ -34,29 +36,12 @@
         <% end %>
      </div>
  
-    <%= render 'layouts/footer' %>
+    
    
   </body> 
 
 </html> 
 
-<script type="text/javascript">
-$(function(){
 
-  var $container = $('#masonry-container');
-
-  $container.imagesLoaded(function(){
-    $container.masonry({
-      itemSelector: '.box',
-      columnWidth: 200,
-      gutterWidth: 5,
-      isAnimated: !Modernizr.csstransitions,
-      isRTL: true
-    });
-  });
-
- 
-});
-</script>
 
 

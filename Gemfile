@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
-gem 'bootstrap-sass'
+
 gem 'bcrypt-ruby'
 gem 'faker'
 gem 'will_paginate'
@@ -23,6 +23,7 @@ group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
+  gem 'bootstrap-sass'
 end
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby

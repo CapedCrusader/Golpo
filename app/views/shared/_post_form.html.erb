@@ -3,9 +3,10 @@
   <div class="field form-actions">
   <p>
     <%= f.text_field :title, placeholder: "Title" %>
-    <%= f.cktext_area :content, placeholder: "Your thoughts ..."%>
-  </p>     
-    <%= f.file_field :photo %>
+    
+    <%= f.file_field :photo, placeholder: "Cover image" %>
+  </p> 
+    <%= render 'shared/inlineall' %>
   </div>
   <%= f.submit "Post", class: "actions btn btn-large btn-primary" %>
   

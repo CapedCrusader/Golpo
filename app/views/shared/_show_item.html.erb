@@ -4,10 +4,9 @@
 </div>  
 
 
-<p>
-  <b>Content:</b>
-  <%= simple_format(@post.content) %>
-</p>
+<div>
+  <%= simple_format(@post.content, nil, :sanitize => false) %>
+</div>
 
 <p>
   <span><%= image_tag @post.photo.url if @post.photo? %>

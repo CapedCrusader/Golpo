@@ -1,8 +1,10 @@
 class Post < ActiveRecord::Base
-  attr_accessible :title, :content, :photo, :posts_attributes
+  attr_accessible :title, :content, :photo, :posts_attributes, :assets
   belongs_to :user
   has_and_belongs_to_many :categories
+  has_many :assets
   has_many :likes
+  accepts_nested_attributes_for :assets, :allow_destroy => true
   accepts_nested_attributes_for :categories
   accepts_nested_attributes_for :likes
   has_attached_file :photo

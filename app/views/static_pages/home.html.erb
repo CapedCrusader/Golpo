@@ -1,6 +1,6 @@
 <% if signed_in? %>
   
-    <div id="masonry-container" class="has-gutters">
+    <div id="masonry-container">
       <%= render 'shared/feed' %>
     </div>
   
@@ -22,6 +22,8 @@
           </div>
         </div>     
       </div>
+
+      <%= render 'layouts/footer' %>
 
   
 <% end %>

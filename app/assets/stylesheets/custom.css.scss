@@ -1,4 +1,10 @@
 @import "bootstrap";
+body {
+padding-top: 60px;
+padding-bottom: 60px;
+}
+
+@import "bootstrap/responsive";
 @import "bootstrap/image-gallery";
 
 /* mixins, variables, etc. */
@@ -15,10 +21,7 @@ html {
 overflow-y: scroll;
 
 }
-body {
-padding-top: 60px;
-padding-bottom: 60px;
-}
+
 section {
 overflow: auto;
 font-family:Georgia;
@@ -284,7 +287,7 @@ section h2{
 .clearfix { zoom: 1; }
 
 .col { max-width: 280px; }
-.col img { max-width: 40px; }
+.col img { max-width: 200px; }
 
 .box {
   margin: 5px;
