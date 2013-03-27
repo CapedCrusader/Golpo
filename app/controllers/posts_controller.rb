@@ -22,15 +22,19 @@ class PostsController < ApplicationController
   
   def new
     @post = Post.new
-
+    5.times { @post.userfiles.build }   
     respond_to do |format|
-      format.html # new.html.erb
+      format.js
+      format.html #new.html.erb
       format.json { render json: @post }
+      
     end
   end 
 
   def edit
     @post = Post.find(params[:id])
+    5.times { @post.userfiles.build }   
+    3.times { @post.userfiles.build }
   end
 
   def create
@@ -38,12 +42,16 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to show_post_path, notice: 'Post was successfully created.'}
+        format.js
+        format.html { redirect_to @post, notice: 'Post was successfully created.'}
         format.json { render json: @post, status: :created, location: @post }
+        
 	return
       else
+        format.js
         format.html { render action: "new" }
         format.json { render json: @post.errors, status: :unprocessable_entity }
+        
       end
     end
   end
@@ -73,6 +81,7 @@ class PostsController < ApplicationController
     end
   end
   
+
 
 
   private

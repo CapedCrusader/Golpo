@@ -11,17 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130222051908) do
-
-  create_table "assets", :force => true do |t|
-    t.string   "asset_file_name"
-    t.string   "asset_content_type"
-    t.integer  "asset_file_size"
-    t.datetime "asset_updated_at"
-    t.integer  "post_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130320124531) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -62,13 +52,17 @@ ActiveRecord::Schema.define(:version => 20130222051908) do
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.integer  "user_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.text     "content"
+    t.string   "modalone_file_name"
+    t.string   "modalone_content_type"
+    t.integer  "modalone_file_size"
+    t.datetime "modalone_updated_at"
   end
 
   add_index "posts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
@@ -83,6 +77,16 @@ ActiveRecord::Schema.define(:version => 20130222051908) do
   add_index "relationships", ["followed_id"], :name => "index_relationships_on_followed_id"
   add_index "relationships", ["follower_id", "followed_id"], :name => "index_relationships_on_follower_id_and_followed_id", :unique => true
   add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
+
+  create_table "userfiles", :force => true do |t|
+    t.string   "userfile_file_name"
+    t.string   "userfile_content_type"
+    t.integer  "userfile_file_size"
+    t.datetime "userfile_updated_at"
+    t.integer  "post_id"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

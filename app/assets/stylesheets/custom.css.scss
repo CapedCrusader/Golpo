@@ -1,4 +1,6 @@
 @import "bootstrap";
+@import "sc-player-standard/structure-horizontal";
+@import "sc-player-standard/colors-orange";
 body {
 padding-top: 60px;
 padding-bottom: 60px;
@@ -14,6 +16,7 @@ $grayMediumLight: #7fff00;
    -webkit-box-sizing: border-box;
    box-sizing: border-box;
 }
+
 
 
 /* universal */
@@ -280,6 +283,7 @@ section h2{
   -webkit-border-radius: 5px;
      -moz-border-radius: 5px;
           border-radius: 5px;
+
 }
 
 .clearfix:before, .clearfix:after { content: ""; display: table; }

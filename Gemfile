@@ -9,7 +9,7 @@ gem 'bootstrap-will_paginate'
 gem 'paperclip'
 gem 'rails-backbone'
 gem 'bootstrap-addons-rails'
-gem 'masonry-rails'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -24,6 +24,7 @@ group :assets do
   gem 'coffee-rails'
   gem 'uglifier'
   gem 'bootstrap-sass'
+  gem 'soundcloud-custom-player-rails'
 end
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -33,6 +34,12 @@ gem 'jquery-rails'
 
 #adding ckeditor gem
 gem 'ckeditor'
+
+# multimedia file upload
+gem 'jquery-fileupload-rails'
+
+#soundcloud player
+
 
 #To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

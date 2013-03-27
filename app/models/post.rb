@@ -1,15 +1,23 @@
 class Post < ActiveRecord::Base
-  attr_accessible :title, :content, :photo, :posts_attributes, :assets
+  attr_accessible :title, :content, :photo, :modalone, :userfile, :userfiles_attributes
+  serialize :content
   belongs_to :user
+  
   has_and_belongs_to_many :categories
-  has_many :assets
-  has_many :likes
-  accepts_nested_attributes_for :assets, :allow_destroy => true
   accepts_nested_attributes_for :categories
-  accepts_nested_attributes_for :likes
+
+  has_many :userfiles
+  accepts_nested_attributes_for :userfiles, :allow_destroy => true 
+
+  has_many :likes
+  accepts_nested_attributes_for :likes, :allow_destroy => true
+  
   has_attached_file :photo
+  has_attached_file :modalone
+  
+
   validates :title, presence: true, length: { maximum: 50 }
-  validates :content, presence: true 
+  validates :content, presence: true
   validates :user_id, presence: true
   
   default_scope order: 'posts.created_at DESC'

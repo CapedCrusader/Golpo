@@ -21,7 +21,6 @@
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require backbone/sample_app
-//= require masonry/jquery.masonry
-//= require masonry/jquery.imagesloaded.min
-//= require masonry/modernizr-transitions
+//= require soundcloud.player.api
+//= require sc-player
 //= require_tree .
