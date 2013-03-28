@@ -39,6 +39,13 @@
 		border-radius: 3px;
 		}
 
+		.template-background{
+			background-color: #e6e5c4;
+			  -webkit-border-radius: 6px;
+			  -moz-border-radius: 6px;
+			  border-radius: 6px;
+		}
+
 		.new
 		{
 		background: #FF7E00;
@@ -473,30 +480,27 @@
 	</style>
 
 
-<div id="datasave">
-	<h1 class="samples">Sample template</h1>
-
-	
-
-	<div class="description">
-		<p>This sample page demonstrates the inline editing feature - CKEditor instances will be created automatically from page elements with <strong>contentEditable</strong> attribute set to value <strong>true</strong>:</p>
-		<pre class="samples">&lt;div <strong>contenteditable="true</strong>" &gt; ... &lt;/div&gt;</pre>
-		<p>Click inside of any element below to start editing.</p>
-	</div>
+<div>
+	<p> <strong> Click inside of any element below to start editing. </strong>
+		<a class="btn btn-success" href="javascript:void(0);" onclick="javascript:introJs().start();">I'm not sure, show me how</a>
+	</p>
 </div>
-<div id="editable_container">
+<div id="editable_container" class="template-background">
 	<div id="header">
-		<div id="headerLeft" contenteditable="true">
-			<h2 >
-				
-				Title<br> of the Content
-			</h2>
-			<h3 >
-				Lorem ipsum dolor sit amet dolor duis blandit vestibulum faucibus a, tortor.
-			</h3>
+		<div id="headerLeft" data-intro='Click and enter the title and tagline/brief' data-step='1'>
+			<div id="keyone" contenteditable="true">
+				<h2 >
+					
+					Title<br> of the Content
+				</h2>
+			
+				<h3 >
+					Lorem ipsum dolor sit amet dolor duis blandit vestibulum faucibus a, tortor.
+				</h3>
+			</div>
 		</div>
-		<div id="headerRight" contenteditable="true">
-			<div id="sectionthree" >
+		<div id="headerRight" data-intro='Enter the summary' data-step='2'>
+			<div id="keytwo" icontenteditable="true" >
 				<p>
 					Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies.
 				</p>
@@ -508,8 +512,8 @@
 		</div>
 	</div>
 	<div id="columns">
-		<div id="column1">
-			<div id="sectionthree" contenteditable="true">
+		<div id="column1" >
+			<div id="keythree" contenteditable="true">
 				<h3>
 					Fusce vitae porttitor
 				</h3>
@@ -537,11 +541,10 @@
 				</blockquote>
 				<p>Pellentesque nunc. Donec suscipit erat. Pellentesque habitant morbi tristique ullamcorper.</p>
 				<p><strike>Mauris mattis feugiat lectus nec mauris. Nullam vitae ante.</strike></p>
-				
 			</div>
 		</div>
-		<div id="column2" contenteditable="true">
-			<div >
+		<div id="column2" >
+			<div id="keyfour" contenteditable="true">
 				<h3>
 					Integer condimentum sit amet
 				</h3>
@@ -550,8 +553,8 @@
 					Praesent <a href="http://ckeditor.com/">magna non mattis ac, rhoncus nunc</a>, rhoncus eget, cursus pulvinar mollis.</p>
 				<p>Proin id nibh. Sed eu libero posuere sed, lectus. Phasellus dui gravida gravida feugiat mattis ac, felis.</p>
 				<p>Integer condimentum sit amet, tempor elit odio, a dolor non ante at sapien. Sed ac lectus. Nulla ligula quis eleifend mi, id leo velit pede cursus arcu id nulla ac lectus. Phasellus vestibulum. Nunc viverra enim quis diam.</p>
-			</div>
-			<div >
+			
+			
 				<h3>
 					Praesent wisi accumsan sit amet nibh
 				</h3>
@@ -560,13 +563,8 @@
 				<p>In hac habitasse platea dictumst. Praesent wisi accumsan sit amet nibh. Maecenas orci luctus a, lacinia quam sem, posuere commodo, odio condimentum tempor, pede semper risus. Suspendisse pede. In hac habitasse platea dictumst. Nam sed laoreet sit amet erat. Integer.</p>
 			</div>
 		</div>
-		<div id="column3">
-			<div id="section3" contenteditable="true">
-				<p>
-					
-
-
-				</p>
+		<div id="column3" >
+			<div id="keyfive" contenteditable="true">
 				<p>Quisque justo neque, mattis sed, fermentum ultrices <strong>posuere cubilia Curae</strong>, Vestibulum elit metus, quis placerat ut, lectus. Ut sagittis, nunc libero, egestas consequat lobortis velit rutrum ut, faucibus turpis. Fusce porttitor, nulla quis turpis. Nullam laoreet vel, consectetuer tellus suscipit ultricies, hendrerit wisi. Donec odio nec velit ac nunc sit amet, accumsan cursus aliquet. Vestibulum ante sit amet sagittis mi.</p>
 				<h3>
 					Nullam laoreet vel consectetuer tellus suscipit

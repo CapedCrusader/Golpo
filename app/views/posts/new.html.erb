@@ -64,27 +64,30 @@
 		   var sroot = {
 					contentHash: function() {
 						var cdict = {},
-				inlinecontainer = $('#editable_container');
-						inlinecontainer.find('div[contenteditable=true]').each( function(){
-							var self = $(this),
-				key = self.attr('id'),
-							value = self.html();
-							sroot.cdict[key] = value;
-						});
+							inlinecontainer = $('#editable_container');
+						inlinecontainer.find('div[contenteditable=true]').each( 						function(){
+														var self = $(this),
+														key = self.attr('id'),
+														value = self.html();
+														sroot.cdict[key] = value;
+															});
 						return JSON.stringify(cdict)
+
 					},
 					setData: function() {
 					var formContainer = $('#new_post'),
-				inlinecontainer = $('#editable_container');
-					formContainer.find('input[name="title"]').val(inlinecontainer.find('#headerLeft')).end()
-						.find('input[name="content"]').val(sroot.contentHash());
+						inlinecontainer = $('#editable_container');
+					formContainer.find('input[name="title"]').val(container.find('#keyone').html()).end()
+						.find('textarea[name="content"]').val(sroot.contentHash());
+
 				}
 				}
 				function myfunction () {
-					debugger;
+					//debugger;
 					sroot.setData();
 				}
 
 
 
     </script>
+    
