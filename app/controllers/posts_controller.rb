@@ -43,7 +43,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         format.js
-        format.html { redirect_to @post, notice: 'Post was successfully created.'}
+        format.html { redirect_to root_path, notice: 'Post was successfully created.'}
         format.json { render json: @post, status: :created, location: @post }
         
 	return
@@ -80,9 +80,13 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def stringify(hash)
+    hash.map{|k,v| "#{k}=#{v}"}.join('  $&  ')
+  end
+
+  helper_method :stringify
   
-
-
 
   private
 

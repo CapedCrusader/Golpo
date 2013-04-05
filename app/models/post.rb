@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   attr_accessible :title, :content, :photo, :modalone, :userfile, :userfiles_attributes
-  serialize :content
+  
   belongs_to :user
   
   has_and_belongs_to_many :categories
@@ -16,7 +16,7 @@ class Post < ActiveRecord::Base
   has_attached_file :modalone
   
 
-  validates :title, presence: true, length: { maximum: 50 }
+  validates :title, presence: true
   validates :content, presence: true
   validates :user_id, presence: true
   

@@ -70,17 +70,29 @@
 														key = self.attr('id'),
 														value = self.html();
 														cdict[key] = value;
+
 															});
-						return JSON.stringify(cdict)
+						console.log(cdict)
+
+						var str = "&& "
+						for (var index in cdict){
+						    temp = index + " : " + cdict[index] + " && ",
+						    str = str.concat(temp);
+						}
+						
+						
+						return str
+
 
 					},
 					setData: function() {
 					var formContainer = $('#new_post'),
 						inlinecontainer = $('#editable_container');
 					formContainer.find('input[name="title"]').val(inlinecontainer.find('#keyone').html()).end()
-						.find('textarea[name="content"]').val(sroot.contentHash());
+						.find('input[name="content"]').val(sroot.contentHash() );
 
 				}
+
 				}
 				function myfunction () {
 					//debugger;

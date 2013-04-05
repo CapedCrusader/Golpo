@@ -2,8 +2,8 @@
     <%= render 'shared/error_messages', object: f.object %>
     <div class="field form-actions">
     <p>
-      <%= f.text_field :title, placeholder: "Title", name: "title" %>
-      <%= f.text_area :content, placeholder: "Content", name: "content" %>
+      <%= f.hidden_field :title, placeholder: "Title", name: "title" %>
+      <%= f.hidden_field :content, placeholder: "Content", name: "content" %>
       <%= f.file_field :photo, placeholder: "Cover image" %>
       <%= f.file_field :modalone, placeholder: "Cover image" %>
 
