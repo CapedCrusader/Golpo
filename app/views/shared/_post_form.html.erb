@@ -1,30 +1,17 @@
-<%= form_for(@post, id: "myform",  :html => {:multipart => true})  do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-    <div class="field form-actions">
-    <p>
-      <%= f.hidden_field :title, placeholder: "Title", name: "title" %>
-      <%= f.hidden_field :content, placeholder: "Content", name: "content" %>
-      <%= f.file_field :photo, placeholder: "Cover image" %>
-      <%= f.file_field :modalone, placeholder: "Cover image" %>
 
-    </p> 
-    <%= f.fields_for :userfiles do |asset_fields|   %>
-      <% if asset_fields.object.new_record? %>
-        <p>
-          <%= asset_fields.file_field :userfile %>
-        </p>
-      <% end %>
-    <% end %>
-
-
-  </div>
-  <%= f.submit "Post", :onclick => 'myfunction();', class: "actions btn btn-large btn-primary" %>
-  <% end %>
+  
 
   <%= render "shared/inlineall" %> 
 
+  
+  
+
   	<%= link_to "Display a new view", new_post_path, :remote => true  %>
 
+  <p>
+    <a class="btn btn-medium" href="javascript:void(0);" onclick='myfunction();'>Publish</a>
+
+  </p>
   <div id="template">
 
     

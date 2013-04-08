@@ -86,17 +86,29 @@
 
 					},
 					setData: function() {
-					var formContainer = $('#new_post'),
-						inlinecontainer = $('#editable_container');
-					formContainer.find('input[name="title"]').val(inlinecontainer.find('#keyone').html()).end()
-						.find('input[name="content"]').val(sroot.contentHash() );
+							var inlinecontainer = $('#editable_container');	
+							var Title = inlinecontainer.find('#keyone').html();
+							var Content = sroot.contentHash();
+							$.ajax({
+							    type: "POST",
+							    url: "/posts",
+							    cache: false,
+							    data: {post: {title: Title, content: Content}},
+							    success: function (data) { 
+							    	success_callback(data) },
+		        				fail: function (data) { 
+		        					fail_callback(data) }
+							    
+							 
+							});
 
-				}
+					}
 
 				}
 				function myfunction () {
 					//debugger;
 					sroot.setData();
+
 				}
 
 

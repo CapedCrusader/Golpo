@@ -24,7 +24,7 @@ class PostsController < ApplicationController
     @post = Post.new
     5.times { @post.userfiles.build }   
     respond_to do |format|
-      format.js
+      
       format.html #new.html.erb
       format.json { render json: @post }
       
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.js
+        
         format.html { redirect_to root_path, notice: 'Post was successfully created.'}
         format.json { render json: @post, status: :created, location: @post }
         
@@ -80,13 +80,6 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-  def stringify(hash)
-    hash.map{|k,v| "#{k}=#{v}"}.join('  $&  ')
-  end
-
-  helper_method :stringify
-  
 
   private
 
