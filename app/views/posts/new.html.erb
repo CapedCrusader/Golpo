@@ -74,12 +74,13 @@
 															});
 						console.log(cdict)
 
-						var str = "&& "
+						var str = ""
 						for (var index in cdict){
+
 						    temp = index + " : " + cdict[index] + " && ",
 						    str = str.concat(temp);
 						}
-						
+						str = str.substring(0, s.length - 4)
 						
 						return str
 

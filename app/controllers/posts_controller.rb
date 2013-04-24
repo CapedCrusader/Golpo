@@ -59,7 +59,8 @@ class PostsController < ApplicationController
   
   def update
     @post = Post.find(params[:id])
-
+    s = @post.content
+    @show_data = Hash[*s.split(/:| && /)]
     respond_to do |format|
       if @post.update_attributes(params[:post])
         format.html { redirect_to root_path, notice: 'Post was successfully updated.' }

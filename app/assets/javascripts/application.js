@@ -23,4 +23,5 @@
 //= require backbone/sample_app
 //= require soundcloud.player.api
 //= require sc-player
+//= require jquery-fileupload
 //= require_tree .

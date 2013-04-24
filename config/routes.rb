@@ -12,6 +12,7 @@ SampleApp::Application.routes.draw do
   resources :likes, :only => [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :categories, only: [:create, :update, :destroy]
+  resources :userfiles
   root to: 'static_pages#home'
 
   match '/help', to: 'static_pages#help'
