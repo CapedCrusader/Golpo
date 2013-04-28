@@ -7,11 +7,16 @@ class Userfile < ActiveRecord::Base
 
   def to_jq_upload
     {
-      "name" => read_attribute(:userfile_file_name),
-      "size" => read_attribute(:userfile_file_size),
-      "url" => userfile.url(:original),
-      "delete_url" => userfile_path(self),
-      "delete_type" => "DELETE" 
+      files: [
+                 {
+                   name: userfile_file_name,
+                   type: userfile_content_type,
+                   size: userfile_file_size,
+                   url: userfile.url,
+                   delete_url: userfile_path(self),
+                   delete_type: "DELETE" 
+                 }
+                ]
     }
   end
 

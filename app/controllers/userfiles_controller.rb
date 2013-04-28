@@ -39,6 +39,7 @@ class UserfilesController < ApplicationController
   # POST /userfiles.json
   def create
       @userfile = Userfile.new(params[:userfile])
+      gon.userfile = 123
 
       respond_to do |format|
         if @userfile.save
@@ -47,7 +48,7 @@ class UserfilesController < ApplicationController
             :content_type => 'text/html',
             :layout => false
           }
-          format.json { render json: [@userfile.to_jq_upload].to_json, status: :created, location: @userfile }
+          format.json { render json: {files: [@userfile.to_jq_upload] }, status: :created, location: @userfile }
         else
           format.html { render action: "new" }
           format.json { render json: @userfile.errors, status: :unprocessable_entity }

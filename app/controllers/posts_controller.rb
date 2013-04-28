@@ -13,7 +13,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-
+    s = @post.content
+    @show_data = Hash[*s.split(/:::| && /)]
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }
@@ -22,7 +23,7 @@ class PostsController < ApplicationController
   
   def new
     @post = Post.new
-    5.times { @post.userfiles.build }   
+       
     respond_to do |format|
       
       format.html #new.html.erb
@@ -33,8 +34,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    5.times { @post.userfiles.build }   
-    3.times { @post.userfiles.build }
+    
   end
 
   def create
@@ -59,8 +59,7 @@ class PostsController < ApplicationController
   
   def update
     @post = Post.find(params[:id])
-    s = @post.content
-    @show_data = Hash[*s.split(/:| && /)]
+    
     respond_to do |format|
       if @post.update_attributes(params[:post])
         format.html { redirect_to root_path, notice: 'Post was successfully updated.' }
@@ -81,6 +80,8 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  
 
   private
 

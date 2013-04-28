@@ -63,6 +63,7 @@
 
 		   var sroot = {
 					contentHash: function() {
+						
 						var cdict = {},
 							inlinecontainer = $('#editable_container');
 						inlinecontainer.find('div[contenteditable=true]').each( 						function(){
@@ -77,10 +78,10 @@
 						var str = ""
 						for (var index in cdict){
 
-						    temp = index + " : " + cdict[index] + " && ",
+						    temp = index + " ::: " + cdict[index] + " && ",
 						    str = str.concat(temp);
 						}
-						str = str.substring(0, s.length - 4)
+						str = str.substring(0, str.length - 4)
 						
 						return str
 
