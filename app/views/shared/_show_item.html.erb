@@ -568,7 +568,7 @@
           Title<br> of the Content
         </h2>
       </div>  
-      <div id="keytwo" c>
+      <div id="keytwo" >
         <p>         
           Click and enter the summary of the page.
         </p>
@@ -649,11 +649,12 @@
         <p>Click and enter content.</p>
       </div>
 
-      <div id="soundcloud" >
-        
+      <div id="youtube" >
+        <%= @youtube %>
         <p>
-            <a href= @show_data[:soundcloud] class="sc-player">Audio track.</a>
-        </p>
+            <iframe width="560" height="349" src="<%= "http://www.youtube.com/embed/"+@youtube %>"></iframe>
+        </p> 
+
       </div>
     </div>
 

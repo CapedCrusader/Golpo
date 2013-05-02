@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   before_filter :signed_in_user, only: [:create, :edit, :update, :delete]
   before_filter :correct_user,  only: [:edit, :update, :destroy]
 
+  include ActionView::Helpers::SanitizeHelper
+
   def index
     @posts = Post.all
 
@@ -15,6 +17,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     s = @post.content
     @show_data = Hash[*s.split(/:::| && /)]
+    @youtube = strip_tags(@show_data["youtube "])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }
