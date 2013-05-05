@@ -16,8 +16,9 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     s = @post.content
-    @show_data = Hash[*s.split(/:::| && /)]
-    @youtube = strip_tags(@show_data["youtube "])
+    @show_data = Hash[*s.split(/ ::: | && /)]
+    @youtube = strip_tags(@show_data["youtube"])
+    @urls = @show_data["urls"].split(",")
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }
@@ -28,7 +29,7 @@ class PostsController < ApplicationController
     @post = Post.new
        
     respond_to do |format|
-      
+      format.js
       format.html #new.html.erb
       format.json { render json: @post }
       
@@ -45,7 +46,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        
+        format.js
         format.html { redirect_to root_path, notice: 'Post was successfully created.'}
         format.json { render json: @post, status: :created, location: @post }
         

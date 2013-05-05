@@ -1,79 +1,4 @@
 <%= provide(:title, @post.title) %>
-<div class="section black" id="section1">
-  <h2><%= @post.title %></h2>
-</div>  
-
-
-<div>
-  <%= @post.content %>
-</div>
-
-<p>
-  <span><%= image_tag @post.photo.url if @post.photo? %>
-</p>
-<% if @post.userfiles %>
-<p>
-	
-	
-		<div id="myCarousel" class="carousel slide">
-               <!-- Carousel items -->
-              <div class="carousel-inner">
-              	<% for upload in @post.userfiles %>
-                <div class="item"><%= image_tag (upload.userfile.url) %></div>
-                <% end %>
-              </div>
-               <!-- Carousel nav -->
-              <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-              <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-            </div>
-	
-            <header>
-                
-                <p>
-                    <button id="start-slideshow" class="btn btn-large btn-success" data-slideshow="5000" data-target="#modal-gallery" data-selector="#gallery a[rel=gallery]">Start Slideshow</button>
-                    <button id="toggle-fullscreen" class="btn btn-large btn-primary" data-toggle="button">Toggle Fullscreen</button>
-                </p>
-            </header>
-                <div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
-                  <% for upload in @post.userfiles %>
-                      <%= link_to image_tag(upload.userfile.url), url_for(upload.userfile.url), :title => upload.userfile_file_name, :rel => "gallery" %>
-                  <% end %>
-              
-                </div>
-
-                <div id="modal-gallery" class="modal modal-gallery hide fade" tabindex="-1" style="margin-top: -257.5px; margin-left: -287px; display: none;" aria-hidden="true">
-                    <div class="modal-header">
-                        <a class="close" data-dismiss="modal">×</a>
-                        <h3 class="modal-title" style="width: 530px;">Ísafjörður</h3>
-                    </div>
-                    <div class="modal-body"><div class="modal-image" style="width: 530px; height: 353px;"><img src="http://farm9.static.flickr.com/8211/8293777447_cd748fbfc6_b.jpg" width="530" height="353" class="in"></div></div>
-                    <div class="modal-footer">
-                        <a class="btn modal-download" target="_blank" href="http://farm9.static.flickr.com/8211/8293777447_cd748fbfc6_b.jpg">
-                            <i class="icon-download"></i>
-                            <span>Download</span>
-                        </a>
-                        <a class="btn btn-success modal-play modal-slideshow" data-slideshow="5000" style="">
-                            <i class="icon-white icon-pause"></i>
-                            <span>Slideshow</span>
-                        </a>
-                        <a class="btn btn-info modal-prev" style="">
-                            <i class="icon-arrow-left icon-white"></i>
-                            <span>Previous</span>
-                        </a>
-                        <a class="btn btn-primary modal-next" style="">
-                            <span>Next</span>
-                            <i class="icon-arrow-right icon-white"></i>
-                        </a>
-                    </div>
-                </div>
-
-
-	The images have been saved
-</p>	
-<% end %>
-
-
-
 
   <style>
     html, body, h1, h2, h3, h4, h5, h6, div, span, blockquote, p, address, form, fieldset, img, ul, ol, dl, dt, dd, li, hr, table, td, th, strong, em, sup, sub, dfn, ins, del, q, cite, var, samp, code, kbd, tt, pre
@@ -576,7 +501,43 @@
     </div>
     
     <div id="headerRight" >
-    
+                <p>
+                    <button id="start-slideshow" class="btn btn-small btn-success" data-slideshow="5000" data-target="#modal-gallery" data-selector="#gallery a[rel=gallery]">Start Slideshow</button>
+                    <button id="toggle-fullscreen" class="btn btn-small btn-primary" data-toggle="button">Toggle Fullscreen</button>
+                </p>
+            
+                <div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
+                  <% for upload in @urls %>
+                      <%= link_to image_tag(upload, :size => "75x75"), upload, :data => {:gallery => 'gallery'} %>
+                  <% end %>
+              
+                </div>
+
+                <div id="modal-gallery" class="modal modal-gallery hide fade" tabindex="-1">
+                    <div class="modal-header">
+                        <a class="close" data-dismiss="modal">&times;</a>
+                        <h3 class="modal-title"></h3>
+                    </div>
+                    <div class="modal-body"><div class="modal-image"></div></div>
+                    <div class="modal-footer">
+                        <a class="btn modal-download" target="_blank">
+                            <i class="icon-download"></i>
+                            <span>Download</span>
+                        </a>
+                        <a class="btn btn-success modal-play modal-slideshow" data-slideshow="5000">
+                            <i class="icon-play icon-white"></i>
+                            <span>Slideshow</span>
+                        </a>
+                        <a class="btn btn-info modal-prev">
+                            <i class="icon-arrow-left icon-white"></i>
+                            <span>Previous</span>
+                        </a>
+                        <a class="btn btn-primary modal-next">
+                            <span>Next</span>
+                            <i class="icon-arrow-right icon-white"></i>
+                        </a>
+                    </div>
+                </div>
       
     </div>
     

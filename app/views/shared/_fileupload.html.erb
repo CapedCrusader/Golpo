@@ -124,12 +124,18 @@
 <!-- add include_tag js files to config.assets.precompile in ...environments/production.rb if you have it in vendor/ assets -->
 
 <script type="text/javascript" charset="utf-8">
+
+  var url_values = []
   $(function () {
       // Initialize the jQuery File Upload widget:
-      $('#fileupload').fileupload();
+      $('#fileupload').fileupload({
+          done: function (e, data){
+          url_values.push(data.result.files[0].files[0].url)
+          }
+          });
       // 
-      // Load existing files:
-      $.getJSON($('#fileupload').prop('action'), function (files) {
+      // Load existingfiles:
+      /*$.getJSON($('#fileupload').prop('action'), function (files) {
         var fu = $('#fileupload').data('blueimpFileupload'), 
           template;
         fu._adjustMaxNumberOfFiles(-files.length);
@@ -141,7 +147,7 @@
           template[0].offsetWidth;
         template.addClass('in');
         $('#loading').remove();
-      });
+      });*/
 
   });
 </script>
