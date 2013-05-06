@@ -153,6 +153,12 @@ vishnukrantha_1.jpg: vishnukrantha_1-d6f4677675eb1295578069eabf6a8678.jpg
 vishnukrantha_1/index.jpg: vishnukrantha_1-d6f4677675eb1295578069eabf6a8678.jpg
 application.js: application-758ed1d97facd316ca552481ebdb3979.js
 application/index.js: application-758ed1d97facd316ca552481ebdb3979.js
+jquery.fileupload-ui.js: jquery.fileupload-ui-69aa88690d2663a96e2282bef9de4da6.js
+jquery/index.fileupload-ui.js: jquery.fileupload-ui-69aa88690d2663a96e2282bef9de4da6.js
+jquery.fileupload.js: jquery.fileupload-9a9e9563d3b109cb13ddd87f265d04a2.js
+jquery/index.fileupload.js: jquery.fileupload-9a9e9563d3b109cb13ddd87f265d04a2.js
+jquery.iframe-transport.js: jquery.iframe-transport-8bb746750b840b13dd57d190df43026b.js
+jquery/index.iframe-transport.js: jquery.iframe-transport-8bb746750b840b13dd57d190df43026b.js
 jquery.ui.widget.js: jquery.ui.widget-8f2d181802839585a53708b6d0b7083d.js
 jquery/index.ui.widget.js: jquery.ui.widget-8f2d181802839585a53708b6d0b7083d.js
 application.css: application-09feaf6ff4cf0ba5880e685cb088fe4e.css
