@@ -3,7 +3,7 @@
     <span class="user"> 
       <%= link_to feed_item.user.name, feed_item.user %>
     </span>
-    <span class="content"><%= feed_item.title %></span>
+    <span class="content"><%= simple_format(feed_item.title) %></span>
     
     <aside ><%= image_tag feed_item.photo.url if feed_item.photo? %></aside>
     <span class="timestamp">

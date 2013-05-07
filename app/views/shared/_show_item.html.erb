@@ -488,19 +488,15 @@
   <div id="header">
     <div id="headerLeft">
       <div id="keyone" >
-        <h2 >
-          
-          Title<br> of the Content
-        </h2>
+        <%= simple_format(@show_data["keyone"]) %>
       </div>  
       <div id="keytwo" >
-        <p>         
-          Click and enter the summary of the page.
-        </p>
+        <%= simple_format(@show_data["keytwo"]) %>
       </div>     
     </div>
     
     <div id="headerRight" >
+        <%if (@urls[0] != "array is empty") %>
                 <p>
                     <button id="start-slideshow" class="btn btn-small btn-success" data-slideshow="5000" data-target="#modal-gallery" data-selector="#gallery a[rel=gallery]">Start Slideshow</button>
                     <button id="toggle-fullscreen" class="btn btn-small btn-primary" data-toggle="button">Toggle Fullscreen</button>
@@ -538,38 +534,14 @@
                         </a>
                     </div>
                 </div>
-      
+        <% end %>
     </div>
     
   </div>
   <div id="columns">
     <div id="column1" >
       <div id="keythree">
-        <h3>
-          Click and enter sub heading.
-        </h3>
-        
-        <p>
-          <strong>
-            Click and enter description.
-          </strong>
-        </p>
-          
-          
-        <p>
-          Click and enter content.
-        </p>
-        <blockquote>
-          <p>
-            Emphasize key points in this block. Click to enter.
-          </p>
-        </blockquote>
-        <blockquote>
-          <p>
-            Emphasize key points in this block. Click to enter.
-          </p>
-        </blockquote>
-        <p>Click to enter content</p>
+        <%= simple_format(@show_data["keythree"]) %>
         
         
       </div>
@@ -577,45 +549,26 @@
     </div>
     <div id="column2" >
       <div id="keyfour" >
-        <h3>
-          Click and enter sub heading.
-        </h3>
-        <p>
-          Click and enter description.
-
-        </p>
-        <%= @show_data.keys %>
+        <%= simple_format(@show_data["keyfour"]) %>
       </div>
       <div id="keyfive" >
         
-        <h5>
-          Click to enter second level detail.
-
-        </h5>
+        <%= simple_format(@show_data["keyfive"]) %>
       </div>
 
     </div>
 
     <div id="column3" >
       <div id="keysix" >
-        <p>Click and enter description.</p>
-        <h3>
-          Click and enter sub heading.
-        </h3>
-        <ul>
-          <li>Enter bullet points</li>
-          <li>Enter bullet points</li>
-          
-        </ul>
-        <p>Click and enter content.</p>
+        <%= simple_format(@show_data["keysix"]) %>
       </div>
 
       <div id="youtube" >
-        <%= @youtube %>
+       <%if (@youtube != "Enter id") %> 
         <p>
             <iframe width="560" height="349" src="<%= "http://www.youtube.com/embed/"+@youtube %>"></iframe>
         </p> 
-
+        <% end %>
       </div>
     </div>
 
@@ -623,9 +576,7 @@
   </div>
   <div id="copyright" >
     
-    <p>
-      Enter your copyright
-    </p>
+    <%= simple_format(@show_data["copyright"]) %>
   </div>
 </div>
 

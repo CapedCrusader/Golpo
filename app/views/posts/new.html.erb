@@ -73,7 +73,11 @@
 														cdict[key] = value;
 
 															});
-						
+
+				          if (url_values.length == 0) {
+				                url_values.push('array is empty');
+				                
+				            }
 						cdict["urls"] = url_values
 						console.log(cdict)
 

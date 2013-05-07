@@ -131,8 +131,11 @@
       $('#fileupload').fileupload({
           done: function (e, data){
           url_values.push(data.result.files[0].files[0].url)
+          
           }
-          });
+
+          
+    });
       // 
       // Load existingfiles:
       /*$.getJSON($('#fileupload').prop('action'), function (files) {
