@@ -19,13 +19,13 @@
 		// The "instanceCreated" event is fired for every editor instance created.
 		CKEDITOR.on( 'instanceCreated', function( event ) {
 
-			event.editor.dataProcessor.writer.setRules( 'p',
+			event.editor.dataProcessor.writer.setRules( 'p','h1','h2','h3'
          {
             indent : false,
-            breakBeforeOpen : true,
+            breakBeforeOpen : false,
             breakAfterOpen : false,
             breakBeforeClose : false,
-            breakAfterClose : true
+            breakAfterClose : false
          });
 			var editor = event.editor,
 				element = editor.element;
