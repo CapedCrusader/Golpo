@@ -1,8 +1,8 @@
 <% if @feed_items.any? %>
 
-  <div id="masonry-container" class="posts has-gutters">
+  <div class="cbp_tmtimeline">
     <%= render partial: 'shared/feed_item', collection: @feed_items %>
-   <div class="clearfix"></div> 
+
   </div>
 
   	<%= will_paginate @feed_items %>
