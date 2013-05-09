@@ -6856,9 +6856,7 @@ ul.icons li [class*=" icon-"] {
     overflow: visible !important;
   }
 }
-body {
-  background-image: url('https://bshassets.s3.amazonaws.com/textures/wood_pattern.png');
-}
+
 body > footer > .footer {
   background-color: '#000000';
 }

@@ -6,7 +6,7 @@
 <span><%= feed_item.created_at.strftime("%d %b %Y") %></span> 
 <span><%= feed_item.created_at.strftime("%H:%M") %></span>
 </time>
-<div class="cbp_tmicon cbp_tmicon-phone"></div>
+<div class="cbp_tmicon cbp_tmicon-phone"><%= gravatar_for feed_item.user %> </div>
 <div class="cbp_tmlabel">
 <h2><%= strip_tags(feed_item.title) %></h2>
 <p>some content,, some content, some content, some content</p>

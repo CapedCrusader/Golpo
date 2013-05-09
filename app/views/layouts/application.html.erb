@@ -24,9 +24,10 @@
     <%= render 'layouts/header' %>
       
       <div class="container" style="
-    margin-top: 50px;
-    position: relative;
-" >
+                                    position: relative;
+                                    width: 950px;
+                                    margin: 25px auto 0;
+                                    " >
         
           <% flash.each do |key, value| %>
 	        <%= content_tag(:div, value, class: "alert alert-#{key}") %>

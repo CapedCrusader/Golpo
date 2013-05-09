@@ -165,8 +165,8 @@ load-image.min.js: load-image.min-35a2af25072bb3d1b1fd3541912a7428.js
 load-image/index.min.js: load-image.min-35a2af25072bb3d1b1fd3541912a7428.js
 tmpl.min.js: tmpl.min-773b3428351a734471f6a2893a072aae.js
 tmpl/index.min.js: tmpl.min-773b3428351a734471f6a2893a072aae.js
-application.css: application-380ef1ce9ace19519afdcb82351f3318.css
-application/index.css: application-380ef1ce9ace19519afdcb82351f3318.css
+application.css: application-12f38eddfc1dcf0cb649e70fbf0e03c2.css
+application/index.css: application-12f38eddfc1dcf0cb649e70fbf0e03c2.css
 loading.gif: loading-b7ff30d20adcf2b850f420d17048930c.gif
 loading/index.gif: loading-b7ff30d20adcf2b850f420d17048930c.gif
 progressbar.gif: progressbar-bc538af0ba6ff3d792217a96651cd58a.gif
