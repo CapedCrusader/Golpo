@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_filter :correct_user,  only: [:edit, :update, :destroy]
 
   include ActionView::Helpers::SanitizeHelper
-
+  
   def index
     @posts = Post.all
 

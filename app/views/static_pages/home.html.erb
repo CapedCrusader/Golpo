@@ -1,30 +1,186 @@
 <% if signed_in? %>
   
     <div class="main">
-      <%= render 'shared/feed' %>
+      <%= render 'shared/feed'%>
     </div>
   
 <% else %>
   
     
     
-      <div class="row-fluid">
-        <div class="span3" >
-           
-        </div>
-        <div class="span9 offset2">
-          <div class="hero-unit center">          
-            <h1>Product name placeholder</h1>
-            <h2>Video placeholder</h2>
-            <div>
-              <%= link_to "Sign up for beta!", signup_path, class: "btn btn-large btn-primary" %>
-            </div>
+      <div class="col1">
+        <div class="grid_full">
+           <div class="tile blue">
+              <div class="tile-content-static">
+                  <div class="content one">
+                      <fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
+                  </div>
+              </div>
           </div>
-        </div>     
-      </div>
+        </div>
 
-      <%= render 'layouts/footer' %>
+        <div class="grid_full">
+           <div class="grid_half alpha">
+               <div class="tile red">
+                  <div class="tile-content-static">
+                      <div class="content one">
+                          <img class="left" src="images/time.png" alt="time" />
+                          <div id="time">                    
+                          <ul>
+                              <li id="para1" class="float_right"></li>
+                              <li id="para2"  class="float_left"></li>
+                          </ul>
+                         </div>    
+                      </div>
+                  </div>
+              </div>
+          </div>
+        <div class="grid_half omega">
+           <div class="tile green">
+              <div class="tile-content-static">
+                  <div class="content one">
+                      <img class="center" src="images/like.png" alt="like" />
+                  </div>
+              </div>
+          </div>
+        </div>
+        </div>
 
+        <div class="grid_full">
+           <div class="tile orange">
+              <div class="tile-content">
+                  <div class="content one">
+                      <h1>Main Content</h1>
+                  </div>
+                  <div class="content two">
+                      <h1>Secondary Content</h1>
+                  </div>
+              </div>
+          </div>
+        </div>  
+        
+        </div>
+        
+
+        <div class="col2">
+        <div class="grid_full">
+          <div class="tile orange">
+              <div class="tile-content">
+                  <div class="content one">
+                      <img class="top" src="images/todo.png" alt="to do list" />
+                      <h1>To-Do List</h1>
+                  </div>
+                  <div class="content two ie7">
+                      <p>There is a lot to do, indeed!</p>
+                  </div>
+              </div>
+          </div>
+        </div>
+        
+        <div class="grid_full">
+          <div class="tile red">
+              <div class="tile-content">
+                  <div class="content one">
+                      <h1>Main Content</h1>
+                  </div>
+                  <div class="content two">
+                      <h1>Secondary Content</h1>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+        <div class="grid_full">
+           <div class="grid_half alpha">
+               <div class="tile royal_blue">
+                  <div class="tile-content-static">
+                      <div class="content one">
+                          <img class="center" src="images/location.png" alt="location" />
+                      </div>
+                  </div>
+              </div>
+          </div>
+        <div class="grid_half omega">
+           <div class="tile blue">
+              <div class="tile-content-static">
+                  <div class="content one">
+                      <img class="top" src="images/music.png" alt="music" />
+                      <h1>Music</h1>
+                  </div>
+              </div>
+          </div>
+        </div>
+        </div>
+        </div>
+
+        
+        <div class="col3">
+          <div class="grid_full">
+          <div class="tile green">
+              <div class="tile-content">
+                  <div class="content one">
+                      <img class="top" src="images/flickr.png" alt="flickr" />
+                      <h1>Flickr</h1>
+                  </div>
+                  <div class="content two ie7">                
+                      <a target="_blank" href="http://www.flickr.com/photos/julia_hora/" >Latest Uploads</a>
+                  </div>
+              </div>
+          </div>
+        </div>
+        
+        <div class="grid_full">
+          <div class="tile blue">
+              <div class="tile-content">
+                   <div class="content one">
+                      <img class="top" src="images/facebook.png" alt="facebook" />
+                      <h1>Facebook</h1>
+                  </div>
+                  <div class="content two ie7">
+                      <a target="_blank" href="http://www.facebook.com/sweetwebdesigncom" >Fan Page</a>                
+                  </div>
+              </div>
+          </div>
+        </div>
+
+        <div class="grid_full">
+          <div class="tile orange">
+              <div class="tile-content">
+                  <div class="content one">
+                      <img class="top" src="images/twitter.png" alt="twitter" />
+                      <h1>Twitter</h1>
+                  </div>
+                  <div class="content two ie7">
+                      <a target="_blank" href="https://twitter.com/JuliaSWD" >Latest Tweets</a>
+                  </div>
+              </div>
+          </div>
+        </div>
+        </div>
+  
   
 <% end %>
 
+<script type="text/javascript">
+      $(document).ready(function () {               
+
+
+          function TileAnimate() {
+
+              $(".tile-content").hover(function (event) {
+                  event.stopPropagation();
+
+                  if (!$(this).hasClass('.tile-content .content.one')) {
+                      $(this).dequeue().stop().animate({ top: "-145px" });
+                  }
+              }, function () {
+                  $(this).addClass('animated').animate({ top: "0" }, "normal", "linear", function () {
+                      $(this).removeClass('animated').dequeue();
+                  });
+              });
+          }
+          TileAnimate(); 
+          
+
+      });
+  </script>
