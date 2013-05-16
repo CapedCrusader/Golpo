@@ -24,7 +24,6 @@ group :assets do
   gem 'coffee-rails'
   gem 'uglifier'
   gem 'bootstrap-sass'
-  gem 'soundcloud-custom-player-rails' 
   gem 'introjs-rails'
 end
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -39,7 +38,7 @@ gem 'ckeditor'
 # multimedia file upload
 gem 'jquery-fileupload-rails'
 
-#soundcloud player
+
 
 gem 'omniauth-facebook'
 

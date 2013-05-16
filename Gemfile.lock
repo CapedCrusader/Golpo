@@ -220,7 +220,6 @@ GEM
       rubyzip
       websocket (~> 1.0.4)
     slop (3.4.4)
-    soundcloud-custom-player-rails (1.0.0)
     spork (0.9.0)
     sprockets (2.2.2)
       hike (~> 1.2)
@@ -270,7 +269,6 @@ DEPENDENCIES
   rails-backbone
   rspec-rails (= 2.10.0)
   sass-rails
-  soundcloud-custom-player-rails
   spork (= 0.9.0)
   sqlite3
   uglifier
