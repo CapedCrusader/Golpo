@@ -9,7 +9,7 @@
 <div class="cbp_tmicon cbp_tmicon-phone"><%= gravatar_for feed_item.user %> </div>
 <div class="cbp_tmlabel">
 <h2><%= link_to strip_tags(feed_item.title), :controller => "posts", :action => "show", :id => feed_item %></h2>
-<p><%= feed_item.content %></p>
+<p><%= simple_format(summary(feed_item)) %></p>
 
     <% if current_user?(feed_item.user) %>
     <%= link_to "delete", feed_item, method:  :destroy, confirm: "You sure?", :remote => true, title:  feed_item.title %>

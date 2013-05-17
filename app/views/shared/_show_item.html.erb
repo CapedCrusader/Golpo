@@ -81,12 +81,14 @@
     <div id="column3" >
       <div id="keysix" >
         <%= simple_format(@show_data["keysix"]) %>
+        
       </div>
 
       <div id="youtube" >
        <%if (@youtube != "Enter id") %> 
         <p>
             <iframe width="320" height="240" src="<%= "http://www.youtube.com/embed/"+@youtube %>"></iframe>
+
         </p> 
         <% end %>
       </div>
@@ -101,4 +103,6 @@
 </div>
 
 <div class="fb-like" data-send="true" data-width="450" data-show-faces="true" data-font="arial" data-action="recommend"></div>
+
+
 

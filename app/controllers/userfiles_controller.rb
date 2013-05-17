@@ -39,7 +39,7 @@ class UserfilesController < ApplicationController
   # POST /userfiles.json
   def create
       @userfile = Userfile.new(params[:userfile])
-      gon.userfile = 123
+      
 
       respond_to do |format|
         if @userfile.save

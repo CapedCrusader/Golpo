@@ -13,7 +13,15 @@
            <div class="tile blue">
               <div class="tile-content-static">
                   <div class="content one">
+                      <%= form_for(:session, url: sessions_path) do |f| %>
+                        <%= f.label :email %>
+                        <%= f.text_field :email %>
+                        <%= f.label :password %>
+                        <%= f.password_field :password %>
+                        <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+                      <% end %>
                       <fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
+
                   </div>
               </div>
           </div>
