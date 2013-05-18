@@ -72,8 +72,22 @@
         <%= simple_format(@show_data["keyfour"]) %>
       </div>
       <div id="keyfive" >
+
+        <a href="#myModal" role="button" class="btn btn-small btn-success" data-toggle="modal">Click for details</a>
+ 
+        <!-- Modal -->
+        <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          
+          <div class="modal-body">
+            <p><%= simple_format(@show_data["keyfive"]) %></p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-small" data-dismiss="modal" aria-hidden="true">Close</button>
+            
+          </div>
+        </div>
         
-        <%= simple_format(@show_data["keyfive"]) %>
+        
       </div>
 
     </div>

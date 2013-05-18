@@ -6,10 +6,12 @@
   
   
 
-  	<%= link_to "Display a new view", new_post_path, :remote => true  %>
+  	
 
-  <p>
-    <a class="btn btn-medium"  onclick='myfunction();'>Publish</a>
+  <p class= "btn btn-small">
+    
+
+    <%= link_to "Publish", root_path,  :onclick => 'myfunction();' %>
 
   </p>
   <div id="template">
