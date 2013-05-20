@@ -4,4 +4,9 @@ module StaticPagesHelper
     @sh_data = Hash[*x.split(/ ::: | && /)]
     return @sh_data["keytwo"]
   end
+
+  def video(url)
+  	return (a = url["?v="]) ? url.split("?v=")[1] : url.split("/")[-1]
+  end
 end
+
