@@ -27,8 +27,9 @@ class AuthenticationsController < ApplicationController
     else
       # a new user registers with Facebook
       
-      @user = User.create()
+      @user = User.new()
       @user.authentications.create(:provider => omniauth[:provider], :uid => omniauth[:uid])
+      @user.save
       login_authenticated(msg)
     end
   end
