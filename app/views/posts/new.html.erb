@@ -1,64 +1,33 @@
 
 <%= provide(:title, 'Publish') %>
 <div class="row">
-
 <%= render 'shared/post_form' %>
-
-
 </div>
-
 
 <script>
 
-
-		// This code is generally not necessary, but it is here to demonstrate
-		// how to customize specific editor instances on the fly. This fits well
-		// this demo because we have editable elements (like headers) that
-		// require less features.
-
-		// The "instanceCreated" event is fired for every editor instance created.
-		CKEDITOR.on( 'instanceCreated', function( event ) {
-
-			event.editor.dataProcessor.writer.setRules( ('p','h1','h2','h3'
-         {
-            indent : false,
-            breakBeforeOpen : false,
-            breakAfterOpen : false,
-            breakBeforeClose : false,
-            breakAfterClose : false
-         });
+	CKEDITOR.on( 'instanceCreated', function( event ) {
 			var editor = event.editor,
 				element = editor.element;
 
-			// Customize editors for headers and tag list.
-			// These editors don't need features like smileys, templates, iframes etc.
 			
-				// Customize the editor configurations on "configLoaded" event,
-				// which is fired after the configuration file loading and
-				// execution. This makes it possible to change the
-				// configurations before the editor initialization takes place.
+			if ( element.getAttribute( 'id' ) == 'urls' || element.getAttribute( 'id' ) == 'youtube') {
+				
 				editor.on( 'configLoaded', function() {
 
-					// Remove unnecessary plugins to make the editor simpler.
-					editor.config.removePlugins = 'colorbutton,find,flash,font,' +
-						'forms,iframe,image,newpage,removeformat,' +
-						'smiley,specialchar,stylescombo,templates';
+					editor.config.removePlugins = 'toolbar,elementspath,resize';
 
-					// Rearrange the layout of the toolbar.
-					editor.config.toolbarGroups = [
-						{ name: 'editing',		groups: [ 'basicstyles', 'links' ] },
-						{ name: 'undo' },
-						{ name: 'clipboard',	groups: [ 'selection', 'clipboard' ] },
-						{ name: 'about' }
-					];
 				});
+			}
+
 			
 		});
 
 
+	
+</script>
 
-	</script>
-	<script>
+<script>
 
 		   var sroot = {
 					contentHash: function() {
@@ -73,12 +42,12 @@
 
 															});
 
-				          if (url_values.length == 0) {
+				       /*   if (url_values.length == 0) {
 				                url_values.push('array is empty');
 				                
 				            }
 						cdict["urls"] = url_values
-						console.log(cdict)
+						console.log(cdict) */
 
 						var str = ""
 						for (var index in cdict){
@@ -117,8 +86,7 @@
 					sroot.setData();
 
 				}
-
-
-
-    </script>
+</script>
     
+
+

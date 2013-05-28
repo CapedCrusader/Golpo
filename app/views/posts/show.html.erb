@@ -28,6 +28,15 @@
 
 <script>
   $(function () {
+    $('#mymodal').on('hidden', function() {
+        $(this).removeData('modal');
+    });
+  });
+
+</script>
+
+<script>
+  $(function () {
     'use strict';
 
     // Start slideshow button:

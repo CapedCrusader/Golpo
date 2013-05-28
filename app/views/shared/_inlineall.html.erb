@@ -9,27 +9,34 @@
 </div>
 <div id="editable_container" class="template-background">
 	<div id="header">
-		<div id="headerLeft" data-intro='Click and enter the title and tagline/brief' data-step='1'>
+		<div id="headerLeft" >
 
-			<div id="keyone" contenteditable="true">
+			<div id="keyone" contenteditable="true" data-intro='Click and enter the title and tagline/brief' data-step='1'>
 				<h2>
 					
-					Title<br> of the Content
+					Title of the Content
 				</h2>
+				
 			</div>	
 			<div id="keytwo" contenteditable="true" data-intro='Enter the summary' data-step='2'>
+
 				<p>					
 					<h3>Click and enter the summary of the page.</h3>
 				</p>
 			</div>	   
 		</div>
-		
 		<div id="headerRight" >
-			<div data-intro='Upload images for slideshow' data-step='3'>
-
-				 <%= render 'shared/fileupload' %>
+			
+			<h4>Paste image links below separated by whitespace</h4>
+			<div id="urls" contenteditable="true" data-intro='Paste image links for display'  data-step='3'>
+				
 			</div>
 			
+			<h4>Enter below youtube link</h4>
+			<div id="youtube"  contenteditable="true" data-intro='Click and enter youtube video id' data-step='7'>
+					
+
+			</div>
 		</div>
 		
 	</div>
@@ -100,15 +107,7 @@
 				<p>Click and enter content.</p>
 			</div>
 
-			<div data-intro='Click and enter youtube video id' data-step='7'>
-				
-				Enter below youtube link
-				<div id="youtube"  contenteditable="true">
-					
-				</div>	
-				
-
-			</div>
+			
 		</div>
 
 

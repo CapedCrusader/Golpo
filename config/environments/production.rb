@@ -1,4 +1,4 @@
-SampleApp::Application.configure do
+Golpo::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
@@ -47,7 +47,7 @@ SampleApp::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
-  config.assets.precompile += %w( bootstrap-wysihtml5/wysiwyg-color.css jquery.ui.widget.js jquery.iframe-transport.js jquery.fileupload.js jquery.fileupload-ui.js tmpl.min.js load-image.min.js)
+  config.assets.precompile += %w( )
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 

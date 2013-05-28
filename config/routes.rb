@@ -1,4 +1,6 @@
-SampleApp::Application.routes.draw do
+Golpo::Application.routes.draw do
+  resources :authentications
+
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :users do
@@ -21,10 +23,7 @@ SampleApp::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
   match '/signup', to: 'users#new'
   match '/signin', to: 'sessions#new'
-  match '/auth/new' => 'authentications#new'
   match '/auth/:provider/callback' => 'authentications#create'
-  match "/auth/failure" => "authentications#failure" #OMNIAUTH
-  match "facebook/logout", :to => "authentications#logout", :as => :logout_authentication
   match '/signout', to: 'sessions#destroy', via: :delete
   #match '/posts', to: 'posts#index'
   #match '/posts/new', to: 'posts#new'

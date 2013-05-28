@@ -51,6 +51,11 @@
   }
 }
 
+.index-center {
+    
+    
+}
+
 .tile h1 {font-size: 2.5em;} 
 .tile p{font-size: 1.5em;} 
 .tile a{font-size: 1.8em;}
@@ -325,8 +330,8 @@
 .grid_full {    
     margin-left: 0.3%;
     margin-right: 0.3%;
-    margin-bottom: 0.2%;
-    margin-top: 0.2%;
+    margin-bottom: 0.8%;
+    margin-top: 0.8%;
 }
 .grid_half {    
     
@@ -782,7 +787,7 @@
     }
 
     /**
-    * Samples index styles.
+    * Samples index styles for the index page.
     */
 
     .twoColumns,
@@ -931,7 +936,7 @@
       font-family: "Arial Black",arial-black;
       font-size: 4.6em;
       line-height: 1.1em;
-      text-transform: uppercase;
+      
     }
 
     #headerLeft h3

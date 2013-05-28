@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :title, :content, :photo, :modalone, :userfile, :userfiles_attributes
+  attr_accessible :title, :content, :photo, :userfile, :userfiles_attributes
   
   belongs_to :user
   
@@ -13,7 +13,6 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :likes, :allow_destroy => true
   
   has_attached_file :photo
-  has_attached_file :modalone
   
 
   validates :title, presence: true

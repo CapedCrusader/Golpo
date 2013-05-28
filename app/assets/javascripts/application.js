@@ -16,10 +16,4 @@
 //= require bootstrap/load-image.min
 //= require bootstrap/image-gallery.min
 //= require ckeditor/init
-//= require underscore
-//= require backbone
-//= require backbone_rails_sync
-//= require backbone_datalink
-//= require backbone/sample_app
-//= require jquery-fileupload
 //= require_tree .

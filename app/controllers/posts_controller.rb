@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     s = @post.content
     @show_data = Hash[*s.split(/ ::: | && /)]
     @youtube = strip_tags(@show_data["youtube"])
-    @urls = @show_data["urls"].split(",")
+    @urls = strip_tags(@show_data["urls"]).split("&nbsp;")
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }

@@ -1,9 +1,5 @@
 <%= provide(:title, strip_tags(@post.title)) %>
 
- 
-
-
-
 <div id="editable_container" class="template-background">
   <div id="header">
     <div id="headerLeft">
@@ -100,10 +96,20 @@
 
       <div id="youtube" >
        <%if (@youtube != "") %> 
-        <p>
-            <iframe width="320" height="240" src="<%= "http://www.youtube.com/embed/"+video(@youtube) %>"></iframe>
 
-        </p> 
+       <a href="#myModal" role="button" class="btn btn-small btn-success" data-toggle="modal">Click for video</a>
+ 
+        <!-- Modal -->
+        <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          
+          <div class="modal-body">
+            <iframe width="320" height="240" src="<%= "http://www.youtube.com/embed/"+video(@youtube) %>"></iframe>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-small" data-dismiss="modal" aria-hidden="true">Close</button>
+            
+          </div>
+        
         <% end %>
       </div>
     </div>

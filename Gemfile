@@ -16,6 +16,7 @@ gem 'bootstrap-addons-rails'
 group :development do
   gem 'sqlite3'
   gem 'annotate'
+  gem "nifty-generators"
 end
 # Gems used only for assets and not required
 # in production environments by default.
@@ -78,3 +79,5 @@ group :production do
   gem 'pg'
 end
 
+
+gem "mocha", :group => :test
