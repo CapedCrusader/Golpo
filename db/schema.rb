@@ -59,10 +59,6 @@ ActiveRecord::Schema.define(:version => 20130312155451) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.text     "content"
-    t.string   "modalone_file_name"
-    t.string   "modalone_content_type"
-    t.integer  "modalone_file_size"
-    t.datetime "modalone_updated_at"
   end
 
   add_index "posts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
