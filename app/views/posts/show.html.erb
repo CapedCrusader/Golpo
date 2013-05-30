@@ -27,13 +27,15 @@
 <% end %>
 
 <script>
-  $(function () {
-    $('#mymodal').on('hidden', function() {
-        $(this).removeData('modal');
+  $('.modal').bind('hide', function () {
+    var iframe = $(this).children('div.modal-body').find('iframe');
+    var src = iframe.attr('src');
+    iframe.attr('src', '');
+    iframe.attr('src', src);
     });
-  });
-
 </script>
+
+
 
 <script>
   $(function () {

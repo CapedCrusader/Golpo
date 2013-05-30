@@ -28,10 +28,10 @@ Account <b class="caret"></b>
   <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sign in<b class="caret"></b></a>
   <ul class="dropdown-menu">
     <%= form_for(:session, url: sessions_path) do |f| %>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    
+    <%= f.text_field :email, :placeholder => "Email" %>
+    
+    <%= f.password_field :password, :placeholder => "Password" %>
     <%= f.submit "Sign in", class: "btn btn-small btn-success" %>
     <% end %>
     <p>New user? <%= link_to "Sign up now!", signup_path %></p>

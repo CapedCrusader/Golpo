@@ -7,8 +7,6 @@ gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'paperclip'
-gem 'rails-backbone'
-gem 'bootstrap-addons-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

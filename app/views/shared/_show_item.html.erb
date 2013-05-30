@@ -12,7 +12,8 @@
     </div>
     
     <div id="headerRight" >
-        <%if (@urls[0] != "array is empty") %>
+      <div>
+        <%if (@urls[0]) %>
                 <p>
                     <button id="start-slideshow" class="btn btn-small btn-success" data-slideshow="5000" data-target="#modal-gallery" data-selector="#gallery a[rel=gallery]">Start Slideshow</button>
                     <button id="toggle-fullscreen" class="btn btn-small btn-primary" data-toggle="button">Toggle Fullscreen</button>
@@ -32,10 +33,7 @@
                     </div>
                     <div class="modal-body"><div class="modal-image"></div></div>
                     <div class="modal-footer">
-                        <a class="btn modal-download" target="_blank">
-                            <i class="icon-download"></i>
-                            <span>Download</span>
-                        </a>
+
                         <a class="btn btn-success modal-play modal-slideshow" data-slideshow="5000">
                             <i class="icon-play icon-white"></i>
                             <span>Slideshow</span>
@@ -50,7 +48,29 @@
                         </a>
                     </div>
                 </div>
-        <% end %>
+          <% end %>
+        </div>
+
+        <div id="youtube" >
+         <%if (@youtube != "") %> 
+
+         <a href="#myModal2" role="button" class="btn btn-small btn-success" data-toggle="modal">Click for video</a>
+   
+          <!-- Modal -->
+          <div id="myModal2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            
+            <div class="modal-body">
+              <iframe width="520" height="360" src="<%= "http://www.youtube.com/embed/"+video(@youtube) %>" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-small " data-dismiss="modal" aria-hidden="true" >Close</button>
+              
+            </div>
+          
+          
+          </div>
+         <% end %>
+        </div>
     </div>
     
   </div>
@@ -69,10 +89,10 @@
       </div>
       <div id="keyfive" >
 
-        <a href="#myModal" role="button" class="btn btn-small btn-success" data-toggle="modal">Click for details</a>
+        <a href="#myModal1" role="button" class="btn btn-small btn-success" data-toggle="modal">Click for details</a>
  
         <!-- Modal -->
-        <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div id="myModal1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           
           <div class="modal-body">
             <p><%= simple_format(@show_data["keyfive"]) %></p>
@@ -94,32 +114,11 @@
         
       </div>
 
-      <div id="youtube" >
-       <%if (@youtube != "") %> 
-
-       <a href="#myModal" role="button" class="btn btn-small btn-success" data-toggle="modal">Click for video</a>
- 
-        <!-- Modal -->
-        <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          
-          <div class="modal-body">
-            <iframe width="320" height="240" src="<%= "http://www.youtube.com/embed/"+video(@youtube) %>"></iframe>
-          </div>
-          <div class="modal-footer">
-            <button class="btn btn-small" data-dismiss="modal" aria-hidden="true">Close</button>
-            
-          </div>
-        
-        <% end %>
-      </div>
-    </div>
+      
 
 
   </div>
-  <div id="copyright" >
-    
-    <%= simple_format(@show_data["copyright"]) %>
-  </div>
+  
 </div>
 
 <div class="fb-like" data-send="true" data-width="450" data-show-faces="true" data-font="arial" data-action="recommend"></div>
