@@ -1,5 +1,5 @@
 Golpo::Application.routes.draw do
-  resources :authentications
+
 
   mount Ckeditor::Engine => '/ckeditor'
 
