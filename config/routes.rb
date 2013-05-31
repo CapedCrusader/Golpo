@@ -23,7 +23,6 @@ Golpo::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
   match '/signup', to: 'users#new'
   match '/signin', to: 'sessions#new'
-  match '/auth/:provider/callback' => 'authentications#create'
   match '/signout', to: 'sessions#destroy', via: :delete
   #match '/posts', to: 'posts#index'
   #match '/posts/new', to: 'posts#new'

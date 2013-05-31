@@ -7,7 +7,7 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 
 CKEDITOR.editorConfig=function(e)
 	{
-		e.toolbarLocation = 'bottom';
+		
 		e.filebrowserBrowseUrl="/ckeditor/attachment_files",
 	e.filebrowserFlashBrowseUrl="/ckeditor/attachment_files",
 	e.filebrowserFlashUploadUrl="/ckeditor/attachment_files",
@@ -20,8 +20,11 @@ CKEDITOR.editorConfig=function(e)
 			for(var e,r,t,o=document.getElementsByTagName("meta"),a=new Object,i=0;o.length>i;i++)switch(t=o[i],t.name){case"csrf-token":e=t.content;break;case"csrf-param":r=t.content;break;default:continue}return void 0!==r&&void 0!==e&&(a[r]=e),a},e.addQueryString=function(e,r){var t=[];if(!r)return e;for(var o in r)t.push(o+"="+encodeURIComponent(r[o]));return e+(-1!=e.indexOf("?")?"&":"?")+t.join("&")},
 
 
+CKEDITOR.config.allowedContent = true;
 CKEDITOR.editorConfig = function( config )
 {
+
+	
 	config.toolbar = 'MyToolbar';
  
 	config.toolbar_MyToolbar =
@@ -38,6 +41,7 @@ CKEDITOR.editorConfig = function( config )
 	
 };
 
+
 CKEDITOR.on("dialogDefinition",function(r)
 	{
 		var t,o,a=r.data.name,i=r.data.definition;
@@ -52,7 +56,7 @@ CKEDITOR.on( 'instanceReady', function( ev ) {
 		breakBeforeOpen : false,
 		breakAfterOpen : false,
 		breakBeforeClose : false,
-		breakAfterClose : true
+		breakAfterClose : false
 		};
 
 		for (var i=0; i<blockTags.length; i++) {

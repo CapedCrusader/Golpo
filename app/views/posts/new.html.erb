@@ -1,6 +1,7 @@
 
 <%= provide(:title, 'Publish') %>
-<div class="row">
+<div>
+	
 <%= render 'shared/post_form' %>
 </div>
 
@@ -11,7 +12,7 @@
 				element = editor.element;
 
 			
-			if ( element.getAttribute( 'id' ) == 'urls' || element.getAttribute( 'id' ) == 'youtube') {
+			if ( element.getAttribute( 'id' ) == 'urls' || element.getAttribute( 'id' ) == 'youtube' || element.getAttribute( 'id' ) == 'keyone') {
 				
 				editor.on( 'configLoaded', function() {
 

@@ -11,20 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130529064832) do
+ActiveRecord::Schema.define(:version => 20130531120439) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  create_table "categories_microposts", :id => false, :force => true do |t|
-    t.integer "category_id"
-    t.integer "micropost_id"
-  end
-
-  add_index "categories_microposts", ["category_id", "micropost_id"], :name => "index_categories_microposts_on_category_id_and_micropost_id"
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
