@@ -23,7 +23,7 @@
   </head>
 
 
-  <body onload="init()" style=" margin-top: 50px; position: relative;">
+  <body onload="init()" >
 
     <%= render 'layouts/header' %>
       <div id="fb-root"></div>
@@ -95,11 +95,7 @@
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
       </script>
-      <div class="container" style="
-                                    position: relative;
-                                    width: 950px;
-                                    margin: 25px auto 0;
-                                    " >
+      <div class="container"  >
           <% flash.each do |key, value| %>
 	        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
           <% end %>

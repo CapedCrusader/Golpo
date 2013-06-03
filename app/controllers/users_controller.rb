@@ -16,8 +16,8 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save 
       sign_in @user
-      flash[:success] = "Welcome to the Sample App!"
-      redirect_to @user
+      flash[:success] = "Welcome to Golpo!"
+      redirect_to users_path
     else
       render 'new'
     end
@@ -37,7 +37,8 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.page(params[:page]).per_page(10)
+    @users = User.order("RANDOM()").first(10)
+    @posts = Post.order("RANDOM()").first(10)
     respond_to do |format|
       format.js
       format.html # index.html.erb
@@ -54,6 +55,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.paginate(page: params[:page])
+    
   end
 
   def following
@@ -68,6 +70,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
+  end
+
+  def get_random_posts_for_index_page
+    Post.order("RAND()").first(10)
   end
 
   private

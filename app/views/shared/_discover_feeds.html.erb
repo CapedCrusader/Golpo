@@ -1,0 +1,15 @@
+
+<li>
+<time class="cbp_tmtime" datetime="">
+<span><%= post.created_at.strftime("%d %b %Y") %></span> 
+<span><%= post.created_at.strftime("%I:%M %p") %></span>
+</time>
+<div class="cbp_tmicon cbp_tmicon-phone"><%= gravatar_for post.user %> </div>
+<div class="cbp_tmlabel">
+<h2><%= link_to simple_format(strip_tags(post.title)), :controller => "posts", :action => "show", :id => post %></h2>
+	by <%= link_to post.user.name, :controller => "users", :action => "show", :id => post.user  %>
+	  
+<p><%= simple_format(strip_tags(summary(post))) %></p>
+
+</div>
+</li>

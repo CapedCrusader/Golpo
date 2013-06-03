@@ -1,25 +1,35 @@
 
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="span4">
+  <aside class="span3">
     <section>
-      <h1>
+      <h3>
         <%= gravatar_for @user %>
         <%= @user.name %>
-      </h1>
+      </h3>
     </section>
     <section>
       <%= render 'shared/stats' %>
     </section>
+    <section>
+      <%= @user.posts.count %> contributions
+    </section>
+    <section>
+      <%= render 'follow_form' if signed_in? %>
+    </section>
   </aside>
-  <div class="span8">
-    <%= render 'follow_form' if signed_in? %>
+  <div class="span9">
+    
     <% if @user.posts.any? %>
-       <h3>Posts (<%= @user.posts.count %>)</h3>
-       <ol class="posts">
-         <%= render @posts %>
-       </ol>
-       <%= will_paginate @posts %>
+
+        <ul class="cbp_tmtimeline">
+          <%= render partial: 'shared/user_feed', collection: @posts, as: :post %>
+
+        </ul>
+
+        <%= will_paginate @posts %>
+       
+       
     <% end %>
   </div>
 </div>

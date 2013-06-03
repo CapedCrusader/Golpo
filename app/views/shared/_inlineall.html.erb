@@ -7,7 +7,11 @@
 		<a class="btn btn-success"  onclick="javascript:introJs().start();">I'm not sure, show me how</a>
 	</p>
 </div>
-<div id="editable_container" class="template-background">
+
+<p class= "btn btn-medium">
+    <%= link_to "Publish", root_path,  :onclick => 'myfunction();' %>
+</p>
+<div id="editable_container">
 	<div id="header">
 		<div id="headerLeft" >
 		
@@ -26,12 +30,12 @@
 		</div>
 		<div id="headerRight" >
 			
-			<h4>Paste image links below separated by whitespace</h4>
+			<p>Paste image links below separated by whitespace</p>
 			<div id="urls" contenteditable="true" data-intro='Paste image links for display'  data-step='3'>
 				
 			</div>
 			
-			<h4>Paste youtube link below</h4>
+			<p>Paste youtube link below</p>
 			<div id="youtube"  contenteditable="true" data-intro='Click and enter youtube video link' data-step='4'>
 					
 
@@ -113,4 +117,7 @@
 	</div>
 	
 </div>
+<p class= "btn btn-medium">
+    <%= link_to "Publish", root_path,  :onclick => 'myfunction();' %>
+</p>
 

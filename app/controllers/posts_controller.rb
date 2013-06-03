@@ -86,6 +86,7 @@ class PostsController < ApplicationController
   end
 
   
+  
 
   private
 

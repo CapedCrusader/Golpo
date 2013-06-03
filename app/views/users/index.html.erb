@@ -1,9 +1,15 @@
-<%= provide(:title, 'All users') %>
-<h1>All users</h1>
+<%= provide(:title, 'Discover') %>
+<div class="row">
+  <aside class="span2">
+  	<h5> Featured Contributors </h5>
+    <%= render partial: 'shared/discover_users', collection: @users, as: :user %>
+  </aside>
+  <div class="span10">
+    <ul class="cbp_tmtimeline">
+        <%= render partial: 'shared/discover_feeds', collection: @posts, as: :post %>
 
-
-<div class="users" id="user">
-  <%= render @users %>
+    </ul>
+    
+  </div>
 </div>
 
-<%= will_paginate %>
