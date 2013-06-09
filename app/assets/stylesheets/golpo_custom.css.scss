@@ -809,4 +809,18 @@
 
   
 
+@media (min-width: 979px) {
+    .sidebar-nav-fixed {
+        position:fixed;
+        top:60px;
+        width:15%;
+        float:left;
+    }
+}
+
+#leftSidebar.affix {
+    position: fixed; 
+    top: 100px; 
+    z-index:1;
+}
 

@@ -1,10 +1,10 @@
 <%= provide(:title, 'Discover') %>
 <div class="row">
-  <aside class="span3">
+  <aside class="span2">
   	<h5> Featured Contributors </h5>
     <%= render partial: 'shared/discover_users', collection: @users, as: :user %>
   </aside>
-  <div class="span9">
+  <div class="span10">
     <ul class="cbp_tmtimeline">
         <%= render partial: 'shared/discover_feeds', collection: @posts, as: :post %>
 
