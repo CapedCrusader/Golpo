@@ -15,5 +15,7 @@
 //= require bootstrap
 //= require bootstrap/load-image.min
 //= require bootstrap/image-gallery.min
+//= require rails.validations
+//= require rails.validations.simple_form
 //= require ckeditor/init
 //= require_tree .

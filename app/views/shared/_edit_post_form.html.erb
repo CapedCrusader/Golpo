@@ -1,0 +1,90 @@
+
+
+<div>
+
+
+	<p> <strong> Click inside any element below to start editing. </strong>
+		<a class="btn btn-success"  onclick="javascript:introJs().start();">I'm not sure, show me how</a>
+	</p>
+</div>
+
+<p class= "btn btn-medium">
+    <%= link_to "Publish", root_path,  :onclick => 'myfunction();' %>
+</p>
+<div id="editable_container">
+	<div id="header">
+		<div id="headerLeft" >
+		
+			<div id="keyone" contenteditable="true" data-intro='Click and enter the title and tagline/brief' data-step='1' >
+				
+				<%= simple_format(@show_data["keyone"]) %>
+				
+				
+			</div>	
+			<div id="keytwo" contenteditable="true" data-intro='Enter the summary' data-step='2'>
+
+				<%= simple_format(@show_data["keytwo"]) %>
+			</div>	   
+		</div>
+		<div id="headerRight" >
+			
+				<p>Edit image links; separate the links by using whitespace</p>
+				<div id="urls" contenteditable="true" data-intro='Paste image links for display'  data-step='3'>
+					<% for upload in @urls %>
+                      <%= upload %>
+                  	<% end %>
+              
+					
+				</div>
+			
+			
+				<p>Edit youtube link</p>
+				<div id="youtube"  contenteditable="true" data-intro='Click and enter youtube video link' data-step='4'>
+						
+					<%= @youtube %>
+				</div>
+			
+		</div>
+		
+	</div>
+	<div id="columns">
+		<div id="column1" data-intro='Click and enter content' data-step='5' >
+			<div id="keythree" contenteditable="true">
+				<%= simple_format(@show_data["keythree"]) %>
+				
+				
+			</div>
+			
+		</div>
+		<div id="column2" data-intro='Click and enter content' data-step='6'>
+			<div id="keyfour" contenteditable="true">
+				<%= simple_format(@show_data["keyfour"]) %>
+			</div>
+			<div id="keyfive" contenteditable="true">
+				
+				<h5>
+					Click to enter second level detail.
+
+				</h5>
+
+				<%= simple_format(@show_data["keyfive"]) %>
+			</div>
+
+		</div>
+
+		<div id="column3" >
+			<div id="keysix" contenteditable="true" data-intro='Click and enter content' data-step='7'>
+				<%= simple_format(@show_data["keysix"]) %>
+			</div>
+
+			
+		</div>
+
+
+	</div>
+	
+</div>
+<p class= "btn btn-medium">
+    <%= link_to "Publish", root_path,  :onclick => 'myfunction();' %>
+</p>
+

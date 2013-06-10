@@ -7,7 +7,7 @@
     <div class="span11">
       <%= render 'shared/post_form' %>
     </div>
-  </div>
+</div>
 
 
 <script>
@@ -69,7 +69,8 @@
 					},
 					setData: function() {
 							var inlinecontainer = $('#editable_container');	
-							var Title = inlinecontainer.find('#keyone').html();
+							var OriginalTitle = inlinecontainer.find('#keyone').html();
+							var Title = OriginalTitle.replace(/(<([^>]+)>)/ig,"");
 							var Content = sroot.contentHash();
 							$.ajax({
 							    type: "POST",

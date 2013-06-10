@@ -1,4 +1,7 @@
 class Post < ActiveRecord::Base
+
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :history]
   attr_accessible :title, :content, :photo, :userfile, :userfiles_attributes
   
   belongs_to :user

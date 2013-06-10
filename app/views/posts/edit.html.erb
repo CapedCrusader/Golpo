@@ -1,7 +1,96 @@
-<% provide(:title, "Edit Post") %> 
-<h1>Edit your post</h1>
-<div class="row">
-
-<%= render 'shared/post_form' %>
-
+<% provide(:title, "Edit") %> 
+<div class="row-fluid">
+    <div class="span1">
+     
+    </div>
+    <div class="span11">
+      <%= render 'shared/edit_post_form' %>
+    </div>
 </div>
+
+
+<script>
+
+	CKEDITOR.on( 'instanceCreated', function( event ) {
+			var editor = event.editor,
+				element = editor.element;
+
+			
+			if ( element.getAttribute( 'id' ) == 'urls' || element.getAttribute( 'id' ) == 'youtube' || element.getAttribute( 'id' ) == 'keyone') {
+				
+				editor.on( 'configLoaded', function() {
+
+					editor.config.removePlugins = 'toolbar,elementspath,resize';
+
+				});
+			}
+
+			
+		});
+
+
+	
+</script>
+
+
+<script>
+
+		   var sroot = {
+					contentHash: function() {
+						
+						var cdict = {},
+							inlinecontainer = $('#editable_container');
+						inlinecontainer.find('div[contenteditable=true]').each( 						function(){
+														var self = $(this),
+														key = self.attr('id'),
+														value = self.html();
+														cdict[key] = value;
+
+															});
+
+				       /*   if (url_values.length == 0) {
+				                url_values.push('array is empty');
+				                
+				            }
+						cdict["urls"] = url_values
+						console.log(cdict) */
+
+						var str = ""
+						for (var index in cdict){
+
+						    temp = index + " ::: " + cdict[index] + " && ",
+						    str = str.concat(temp);
+						}
+						str = str.substring(0, str.length - 4)
+						console.log(str)
+						return str
+						
+
+					},
+					setData: function() {
+							var inlinecontainer = $('#editable_container');	
+							var OriginalTitle = inlinecontainer.find('#keyone').html();
+							var Title = OriginalTitle.replace(/(<([^>]+)>)/ig,"");
+							var Content = sroot.contentHash();
+							$.ajax({
+							    type: "PUT",
+							    url: "/posts/5",
+							    cache: false,
+							    data: {post: {title: Title, content: Content}},
+							    success: function (data) { 
+							    	success_callback(data) },
+		        				fail: function (data) { 
+		        					fail_callback(data) }
+							    
+							 
+							});
+
+					}
+
+				}
+				function myfunction () {
+					//debugger;
+					sroot.setData();
+
+				}
+</script>

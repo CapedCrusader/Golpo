@@ -3,8 +3,13 @@
 <div class="row">
 <div class="span6 offset3">
 <h3>Create your account</h3>
-<%= form_for(@user) do |f| %>
-<%= render 'fields', f: f %>
+<%= simple_form_for(@user, :validate => true, :html => {:class => 'form-vertical' }) do |f| %>
+  <%= f.input :name, label: 'Username' %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  
+
 <p>By creating an account, I accept Golpo's <a href="#myModal1" data-toggle="modal">Terms of Service</a><br> and <a href="#myModal2" data-toggle="modal">Privacy Policy.</a></p>
 
 		<div id="myModal1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -245,7 +250,7 @@
             
           </div>
         </div>
-<p><%= f.submit "Create account", class: "btn btn-medium btn-primary"%></p>
+<p><%= f.button :submit , class: "btn btn-medium btn-primary"%></p>
 <% end %>
 </div>
 </div>

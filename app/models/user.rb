@@ -10,6 +10,10 @@
 #
 
 class User < ActiveRecord::Base
+
+  extend FriendlyId
+  friendly_id :name
+
   attr_accessible :email, :name, :password, :password_confirmation
   has_secure_password
   has_many :posts, dependent: :destroy
@@ -24,10 +28,11 @@ class User < ActiveRecord::Base
 
   before_save { self.email.downcase! }
   before_save :create_remember_token
-  validates :name, presence: true, length: { maximum: 12 }, uniqueness: { case_sensitive: false }
+  validates :name, presence: true, length: { maximum: 12 }
+  validates_format_of :name, :with => /\A[a-z0-9]+\z/i, :message => "should only contain letters and numbers, no spaces"
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
-  
+  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
+  validates_uniqueness_of :email, :name
   validates :password, length: { minimum: 6 }
   validates :password_confirmation, presence: true
  

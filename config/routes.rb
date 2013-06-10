@@ -7,6 +7,7 @@ Golpo::Application.routes.draw do
     member do
       get :following, :followers
     end
+    
   end
 
   resources :sessions, only: [:new, :create, :destroy]
