@@ -41,6 +41,9 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    if request.path != post_path(@post)
+      redirect_to @post, status: :moved_permanently
+    end
     s = @post.content
     @show_data = Hash[*s.split(/ ::: | && /)]
     @youtube = strip_tags(@show_data["youtube"])

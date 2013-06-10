@@ -13,9 +13,7 @@
 <p><%= simple_format(strip_tags(summary(feed_item))) %></p>
 
 
-    <% if current_user?(feed_item.user) %>
-    <%= link_to "delete", feed_item, method: :delete, confirm: "You sure?", title: feed_item.title %>
-    <% end %>
+    
 </div>
 </li>
 
