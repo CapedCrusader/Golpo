@@ -62,7 +62,7 @@
 						    str = str.concat(temp);
 						}
 						str = str.substring(0, str.length - 4)
-						console.log(str)
+						
 						return str
 						
 
@@ -78,9 +78,9 @@
 							    cache: false,
 							    data: {post: {title: Title, content: Content}},
 							    success: function (data) { 
-							    	success_callback(data) },
+							    	console.log("Post successful") },
 		        				fail: function (data) { 
-		        					fail_callback(data) }
+		        					console.log("Post failed") }
 							    
 							 
 							});

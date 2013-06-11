@@ -1,10 +1,15 @@
 
 
-    <div class="row-fluid">
+    <div class="row-fluid" >
     <div class="span1">
      
     </div>
     <div class="span11">
+        <% if current_user?(@post.user) %>
+            <%= link_to "Edit | ", edit_post_path(@post) %>
+            <%= link_to "Delete", @post, method: :delete, confirm: "Are you sure?" %>
+        <% end %>
+        <p></p>
       <%= render 'shared/show_item' %>
     </div>
   </div>

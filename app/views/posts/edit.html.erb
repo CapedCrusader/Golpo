@@ -1,5 +1,5 @@
 <% provide(:title, "Edit") %> 
-<div class="row-fluid">
+<div class="row-fluid" id = "edit_post" data-paramid="<%= params[:id] %>">
     <div class="span1">
      
     </div>
@@ -62,7 +62,7 @@
 						    str = str.concat(temp);
 						}
 						str = str.substring(0, str.length - 4)
-						console.log(str)
+						
 						return str
 						
 
@@ -72,15 +72,18 @@
 							var OriginalTitle = inlinecontainer.find('#keyone').html();
 							var Title = OriginalTitle.replace(/(<([^>]+)>)/ig,"");
 							var Content = sroot.contentHash();
+							var idPost = $('#edit_post');
+    						var id = idPost.data('paramid');
+    						
 							$.ajax({
 							    type: "PUT",
-							    url: "/posts/5",
+							    url: "/posts/"+id,
 							    cache: false,
 							    data: {post: {title: Title, content: Content}},
 							    success: function (data) { 
-							    	success_callback(data) },
+							    	console.log("Update successful")},
 		        				fail: function (data) { 
-		        					fail_callback(data) }
+		        					console.log("Update failed")}
 							    
 							 
 							});

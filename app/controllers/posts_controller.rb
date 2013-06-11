@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_filter :signed_in_user, only: [:create, :edit, :update, :delete]
-  before_filter :correct_user,  only: [:edit, :update, :destroy]
+
 
   include ActionView::Helpers::SanitizeHelper
   
@@ -41,9 +41,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    if request.path != post_path(@post)
-      redirect_to @post, status: :moved_permanently
-    end
+    
     s = @post.content
     @show_data = Hash[*s.split(/ ::: | && /)]
     @youtube = strip_tags(@show_data["youtube"])

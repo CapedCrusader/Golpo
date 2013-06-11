@@ -9,7 +9,11 @@
 <h2><%= link_to simple_format(strip_tags(post.title)), :controller => "posts", :action => "show", :id => post %></h2>
 	by <%= link_to post.user.name, :controller => "users", :action => "show", :id => post.user  %>
 	  
-<p><%= simple_format(strip_tags(summary(post))) %></p>
+<span><%= simple_format(strip_tags(summary(post))) %></span>
+
+<% for upload in photos(post) %>
+    <span><%= image_tag(upload, :size => "75x75")%></span>
+<% end %>
 
 </div>
 </li>

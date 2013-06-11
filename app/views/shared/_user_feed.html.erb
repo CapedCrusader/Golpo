@@ -9,9 +9,11 @@
 <div class="cbp_tmicon cbp_tmicon-phone"><%= gravatar_for @user %> </div>
 <div class="cbp_tmlabel">
 <h2><%= link_to simple_format(strip_tags(post.title)), :controller => "posts", :action => "show", :id => post %></h2>
-<p><%= simple_format(strip_tags(summary(post))) %></p>
+<span><%= simple_format(strip_tags(summary(post))) %></span>
 
-
+				<% for upload in photos(post) %>
+                     <span><%= image_tag(upload, :size => "75x75")%></span>
+                  <% end %>
     
 </div>
 </li>
