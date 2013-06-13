@@ -6740,3 +6740,21 @@ body {
 body > footer > .footer {
   background-color: '#000000';
 }
+
+.signup_splash h3 {
+font-weight: normal;
+
+font-family: 'Georgia';
+color: #3d3d3d;
+margin: 0px;
+margin-bottom: 50px;
+line-height: 24px;
+padding-bottom: 0;
+display: block;
+font-size: 1.2em;
+-webkit-margin-before: 0.83em;
+-webkit-margin-after: 0.83em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+
+}

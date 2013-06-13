@@ -76,7 +76,7 @@
         <%= simple_format(@show_data["keyfour"]) %>
       </div>
       <div id="keyfive" >
-
+        <%if (strip_tags(@show_data["keyfive"]) != "") %> 
         <a href="#myModal1" role="button" class="btn btn-small btn-success" data-toggle="modal">Click for details</a>
  
         <!-- Modal -->
@@ -91,7 +91,7 @@
           </div>
         </div>
         
-        
+        <% end %>
       </div>
 
     </div>
